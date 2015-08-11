@@ -4,6 +4,7 @@ window.VinoBueno = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new VinoBueno.Routers.Router;
+    Backbone.history.start();
   }
 };

@@ -1,3 +1,25 @@
 // Place all the styles related to the session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#login-page {
+  margin: 0 auto;
+  width: 500px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background: white;
+}
+
+#login-page h1 {
+  text-align: center;
+}
+
+#login-page form {
+  text-align: center;
+  padding: 10px;
+}
+
+body {
+  background-image: image-url("home_wine.jpg");
+  background-repeat: no-repeat;
+}

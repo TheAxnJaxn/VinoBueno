@@ -1,11 +1,11 @@
-# BuenVino
+# VinoBueno
 
 [Heroku link][heroku]
 
 [heroku]: TBD
 
 ## Minimum Viable Product
-BuenVino is a clone of Goodreads built on Rails and Backbone. Users can:
+Vino Bueno is a clone of Goodreads for wine reviews, built on Rails and Backbone. Users can:
 
 <!-- Markdown checklist. Used to keep track of my progress. -->
 
