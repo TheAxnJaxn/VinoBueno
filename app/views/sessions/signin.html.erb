@@ -1,0 +1,25 @@
+<div id="login-page">
+
+  <h1>Welcome to Vino Bueno</h1>
+
+  <form class="" action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="">Email:
+      <p>
+        <input type="text" name="user[email]" value="">
+      </p>
+    </label>
+
+    <label for="">Password:
+      <p>
+        <input type="password" name="user[password]" value="">
+      </p>
+    </label>
+
+    <button type="submit" value="sign-in" name="type">Sign In!</button>
+    <button type="submit" value="sign-up" name="type">Sign Up!</button>
+
+  </form>
+
+</div>
