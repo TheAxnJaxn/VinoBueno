@@ -53,8 +53,14 @@ Backbone models and collections that fetch data from those routes. By the end
 of this phase, users will be able to add reviews from wine show pages and
 also be able to add new wines.
 
+### Phase 4: Cellars and Searching for Wines (~2 days)
 
-### Phase 4: Friendships and User Feed (~1-2 days)
+I'll add the ability to create cellars add wines to a cellar, with two default
+cellars: 'want to taste' and 'tasted.' When a user reviews a wine, it's
+automatically added to the 'tasted' cellar. I'll need to add 'search' routes
+to the Wines controller, with a results view page.
+
+### Phase 5: Friendships and User Feed (~1-2 days)
 
 I'll start by adding the ability to view user's show pages and add them
 as a friend. I'll add a `feed` route that uses the `current_user`'s
@@ -63,22 +69,13 @@ chronologically. On the Backbone side, I'll make a `FeedShow` view whose
 collection fetches from the new route.  Ultimately, this will be the page users
 see after logging in.
 
-
-### Phase 5: Cellars and Searching for Wines (~2 days)
-
-I'll add the ability to create cellars add wines to a cellar, with two default
-cellars: 'want to taste' and 'tasted.' When a user reviews a wine, it's
-automatically added to the 'tasted' cellar. I'll need to add 'search' routes
-to the Wines controller, with a results view page.
-
-
 ### Bonus Features (TBD)
+- [ ] User avatars
+- [ ] Comment on reviews
+- [ ] Ability to add images
+- [ ] Typeahead search bar
 - [ ] Recommendations on wines to try
 - [ ] Information on where to buy the wine
-- [ ] User avatars
 - [ ] Like reviews
-- [ ] Comment on reviews
 - [ ] Rating details for wine show pages
 - [ ] Editable user profile
-- [ ] Typeahead search bar
-- [ ] Ability to add images
