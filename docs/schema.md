@@ -34,14 +34,6 @@ rating      | integer   | not null
 review      | text      |
 
 
-## friendships
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users)
-friend_id   | integer   | not null, foreign key (references users)
-
-
 ## cellars
 column name | data type | details
 ------------|-----------|-----------------------
@@ -56,3 +48,11 @@ column name | data type | details
 id          | integer   | not null, primary key
 cellar_id   | integer   |
 wine_id     | integer   |
+
+
+## friendships
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users)
+friend_id   | integer   | not null, foreign key (references users)

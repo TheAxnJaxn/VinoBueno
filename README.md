@@ -7,7 +7,7 @@
 ## Minimum Viable Product
 BuenVino is a clone of Goodreads built on Rails and Backbone. Users can:
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+<!-- Markdown checklist. Used to keep track of my progress. -->
 
 - [ ] Create accounts, sign up
 - [ ] Sign in
@@ -55,7 +55,7 @@ also be able to add new wines.
 
 ### Phase 4: Cellars and Searching for Wines (~2 days)
 
-I'll add the ability to create cellars add wines to a cellar, with two default
+I'll add the ability to create cellars, add wines to a cellar, with two default
 cellars: 'want to taste' and 'tasted.' When a user reviews a wine, it's
 automatically added to the 'tasted' cellar. I'll need to add 'search' routes
 to the Wines controller, with a results view page.
