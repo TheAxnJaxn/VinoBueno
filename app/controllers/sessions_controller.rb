@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
     # Inserted into params based on button clicked
     action = params[:type]
-
     if action == 'sign-in'
 
       user = User.find_by_credentials(
@@ -47,7 +46,7 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:email, :password)
   end
 
 end
