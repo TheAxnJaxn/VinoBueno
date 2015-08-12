@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    render :signinup
+    render :signin
   end
 
   def create
@@ -14,13 +14,13 @@ class SessionsController < ApplicationController
         redirect_to root_url
       else
         flash.now[:errors] = ["Invalid username or password"]
-        render :signinup
+        render :signin
       end
   end
 
   def destroy
     logout!
-    render :signinup
+    render :signin
   end
 
   private
