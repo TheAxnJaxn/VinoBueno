@@ -19,7 +19,18 @@
   padding: 10px;
 }
 
-// body {
-//   background-image: image-url("home_wine.jpg");
-//   background-repeat: no-repeat;
-// }
+// makes body take up 100% of browser height
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+// makes background image take up 100% of parent
+// height (which is body)
+#background-img {
+  height: 100%;
+
+  background-image: image-url("home_wine4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
