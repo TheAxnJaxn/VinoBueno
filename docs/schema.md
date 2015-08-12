@@ -11,17 +11,31 @@ session_token   | string    | not null, unique
 
 
 ## wines
+- type: restrict to red/white/rose
+- grown: location (Sonoma, Napa, etc.)
+- vintage: year
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+name        | string    | not null
 maker       | string    | not null
-type        | string    | not null (red/white)
+type        | string    | not null
 varietal    | string    | not null
 description | text      | not null
-name        | string    |
 grown       | string    |
-image       | binary    |
 vintage     | integer   |
+
+
+## images
+- Polymorphic association so images can be for wines or users
+- User images is a bonus phase, but want DB set up for that now
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+url             | string    | not null
+url_thumb       | string    | not null
+imageable_id    | integer   | not null
+imageable_type  | string    | not null
 
 
 ## reviews

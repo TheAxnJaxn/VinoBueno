@@ -5,9 +5,7 @@ window.VinoBueno = {
   Routers: {},
   initialize: function() {
 
-    var router = new VinoBueno.Routers.Router({
-      $rootEl: $('#main')
-    });
+    var router = new VinoBueno.Routers.Router();
 
     var nav = new VinoBueno.Views.NavShow({
       router: router

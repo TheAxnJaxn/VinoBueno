@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811161917) do
+ActiveRecord::Schema.define(version: 20150812222057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.string   "url",            null: false
+    t.string   "url_thumb",      null: false
+    t.integer  "imageable_id",   null: false
+    t.string   "imageable_type", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -25,5 +34,17 @@ ActiveRecord::Schema.define(version: 20150811161917) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "wines", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.string   "maker",       null: false
+    t.string   "type",        null: false
+    t.string   "varietal",    null: false
+    t.text     "description", null: false
+    t.string   "grown"
+    t.integer  "vintage"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end
