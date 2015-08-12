@@ -4,7 +4,17 @@ window.VinoBueno = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new VinoBueno.Routers.Router;
+
+    var router = new VinoBueno.Routers.Router({
+      $rootEl: $('#main')
+    });
+
+    var nav = new VinoBueno.Views.NavShow({
+      router: router
+    });
+
+    $("#navbar").html(nav.render().$el);
+
     Backbone.history.start();
   }
 };

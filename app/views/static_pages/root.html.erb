@@ -1,9 +1,16 @@
+<div id="navbar"></div>
+
 <div class="content">
   <div id="main"></div>
 </div>
 
 <script>
   $(document).ready(function(){
+
+    // BB only started when user is logged in,
+    // so we pass the current user as a global variable
+    // VinoBueno.CURRENT_USER = JSON.parse("<%%= current_user.to_json %>");
+
     VinoBueno.initialize();
   });
 </script>

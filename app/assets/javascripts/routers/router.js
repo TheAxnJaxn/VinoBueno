@@ -1,7 +1,7 @@
 VinoBueno.Routers.Router = Backbone.Router.extend({
 
-  initialize: function() {
-    this.$rootEl = $('#main');
+  initialize: function(options) {
+    this.$rootEl = options.$rootEl;
   },
 
   routes: {

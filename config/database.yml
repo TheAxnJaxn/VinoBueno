@@ -20,14 +20,11 @@ development:
   pool: 5
   timeout: 5000
   port: 5432
+  # doesn't want to work without username and password here
   username: kjax
   password: db@access
 
 
-  # doesn't want to work without username and password here
-  # which exposes that information publically, which is not wanted
-  # username: kjax
-  # password: db@access
 
 
   # The specified database role being used to connect to postgres.
