@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20150812222057) do
     t.datetime "updated_at",     null: false
   end
 
+  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
     t.string   "password_digest", null: false

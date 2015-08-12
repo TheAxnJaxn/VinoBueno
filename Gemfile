@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
+gem 'cloudinary'
+gem 'figaro'
 
 group :doc do
   gem 'sdoc', require: false

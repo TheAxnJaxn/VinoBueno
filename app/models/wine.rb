@@ -15,4 +15,9 @@
 #
 
 class Wine < ActiveRecord::Base
+
+  validates :name, :maker, :type, :varietal, :description, presence: true
+
+  has_many :images, as: :imageable
+  
 end
