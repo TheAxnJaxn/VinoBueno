@@ -24,18 +24,8 @@ class Api::WinesController < ApplicationController
   end
 end
 
+# make this a module?
 # module Api
 #   class WineController < ApiController
-#
-#     def show
-#       @wine = Wine.find(params[:id])
-#       render json: @wine
-#     end
-#
-#     private
-#
-#     def wine_params
-#       params.require(:wine).permit(:name, :maker, :wine_type, :varietal, :description, :grown, :vintage)
-#     end
 #   end
 # end

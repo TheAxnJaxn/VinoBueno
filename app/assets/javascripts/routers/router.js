@@ -10,7 +10,8 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
-    var wines = VinoBueno.Collections.wines.fetch();
+    var wines = new VinoBueno.Collections.Wines();
+    wines.fetch();
 
     var view = new VinoBueno.Views.WinesIndex({
       collection: wines
@@ -20,7 +21,6 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   wineShow: function(id) {
-debugger
     var wine = VinoBueno.Collections.wines.getOrFetch(id);
 
     var view = new VinoBueno.Views.wineShow({

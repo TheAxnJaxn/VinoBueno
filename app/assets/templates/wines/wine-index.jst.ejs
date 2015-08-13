@@ -1,2 +1,25 @@
 
-Wines
+templates/wines/wine-index.jst.ejs
+
+<% wines.each(function (wine) { %>
+  <tr>
+
+    <td class="wine-mini-img">
+      <%= wine.images %>
+    </td>
+
+    <td class="wine-mini-deets">
+      <ul>
+        <li>Name: <%= wine.escape('name') %></li>
+        <li>Maker: <%= wine.escape('maker') %></li>
+        <li>Type: <%= wine.escape('wine_type') %></li>
+        <li>Varietal: <%= wine.escape('varietal') %></li>
+      </ul>
+    </td>
+
+    <td class="wine-mini-actions">
+      BUTTONS
+    </td>
+
+  </tr>
+<%  }); %>
