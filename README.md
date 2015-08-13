@@ -2,15 +2,16 @@
 
 [Heroku link][heroku]
 
-[heroku]: TBD
+[heroku]: https://sheltered-meadow-1246.herokuapp.com/
 
 ## Minimum Viable Product
 Vino Bueno is a clone of Goodreads for wine reviews, built on Rails and Backbone. Users can:
 
 <!-- Markdown checklist. Used to keep track of my progress. -->
 
-- [ ] Create accounts, sign up
-- [ ] Sign in
+- [X] Create accounts, sign up
+- [X] Sign in, Sign out
+- [X] Nav on all pages
 - [ ] View wine detail pages
 - [ ] Add new wines
 - [ ] Create reviews with ratings
