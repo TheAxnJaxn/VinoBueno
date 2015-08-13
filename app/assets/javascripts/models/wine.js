@@ -9,14 +9,6 @@ VinoBueno.Models.Wine = Backbone.Model.extend({
     }
 
     return response;
-  },
-
-  image: function() {
-    if (!this._image) {
-      this._image = new VinoBueno.Collections.Images([], { wine: this });
-    }
-
-    return this._image;
   }
 
 });
