@@ -3,7 +3,7 @@ class CreateWines < ActiveRecord::Migration
     create_table :wines do |t|
       t.string :name, null: false
       t.string :maker, null: false
-      t.string :type, null: false
+      t.string :wine_type, null: false
       t.string :varietal, null: false
       t.text :description, null: false
       t.string :grown

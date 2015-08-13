@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  name        :string           not null
 #  maker       :string           not null
-#  type        :string           not null
+#  wine_type   :string           not null
 #  varietal    :string           not null
 #  description :text             not null
 #  grown       :string

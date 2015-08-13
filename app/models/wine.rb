@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  name        :string           not null
 #  maker       :string           not null
-#  type        :string           not null
+#  wine_type   :string           not null
 #  varietal    :string           not null
 #  description :text             not null
 #  grown       :string
@@ -16,8 +16,8 @@
 
 class Wine < ActiveRecord::Base
 
-  validates :name, :maker, :type, :varietal, :description, presence: true
+  validates :name, :maker, :wine_type, :varietal, :description, presence: true
 
   has_many :images, as: :imageable
-  
+
 end
