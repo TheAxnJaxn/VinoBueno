@@ -16,9 +16,9 @@
   </script>
 
 </head>
-<body>
-
-<%= yield %>
+<body class="<%= logged_in? ? 'logged-in' : 'logged-out' %>">
+  <%= render "shared/nav" %>
+  <%= yield %>
 
 </body>
 </html>

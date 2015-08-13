@@ -7,12 +7,6 @@ window.VinoBueno = {
 
     var router = new VinoBueno.Routers.Router();
 
-    var nav = new VinoBueno.Views.NavShow({
-      router: router
-    });
-
-    $("#navbar").html(nav.render().$el);
-
     Backbone.history.start();
   }
 };

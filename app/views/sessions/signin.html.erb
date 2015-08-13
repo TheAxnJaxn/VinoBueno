@@ -1,5 +1,5 @@
-<div id="background-img">
-  <%= render "shared/nav" %>
+<div class="login-table">
+<div class="login-middle">
   <div id="sign-in-up">
 
     <h1>Welcome to Vino Bueno</h1>
@@ -8,15 +8,11 @@
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
       <p>
-        <label for="">Email:<br />
-          <input type="text" name="user[email]" value="" placeholder="Email">
-        </label>
+        <input type="text" name="user[email]" value="" placeholder="Email">
       </p>
 
       <p>
-        <label for="">Password:<br />
-          <input type="password" name="user[password]" value="" placeholder="Password">
-        </label>
+        <input type="password" name="user[password]" value="" placeholder="Password">
       </p>
 
       <button type="submit">Sign In!</button>
@@ -24,4 +20,5 @@
     </form>
 
   </div>
+</div>
 </div>

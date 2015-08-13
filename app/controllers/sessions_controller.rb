@@ -20,13 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!
-    render :signin
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:email, :password)
+    redirect_to new_session_url
   end
 
 end
