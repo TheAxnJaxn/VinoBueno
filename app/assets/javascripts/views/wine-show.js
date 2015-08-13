@@ -1,9 +1,9 @@
-VinoBueno.Views.wineShow = Backbone.View.extend({
+VinoBueno.Views.wineShow = Backbone.CompositeView.extend({
 
-  template: JST[''],
+  template: JST['wines/wine-show'],
 
   render: function () {
-
+    
   }
-  
+
 });

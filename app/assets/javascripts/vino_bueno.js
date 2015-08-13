@@ -6,7 +6,7 @@ window.VinoBueno = {
   initialize: function() {
 
     var router = new VinoBueno.Routers.Router();
-
     Backbone.history.start();
+    
   }
 };

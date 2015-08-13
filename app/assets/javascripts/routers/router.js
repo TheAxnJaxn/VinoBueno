@@ -6,7 +6,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'index',
-    'wines/:id': 'showWine'
+    'wines/:id': 'wineShow'
   },
 
   index: function () {
@@ -15,9 +15,13 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  showWine: function(id) {
-    var view = new VinoBueno.Views.wineShow();
-    this.$rootEl.html(view);
+  wineShow: function(id) {
+    var wine = VinoBueno.Collections.wines.getOrFetch(id);
+
+    var view = new VinoBueno.Views.wineShow({
+      model: wine
+    });
+    // this.$rootEl.html(view);
     this._swapView(view);
   },
 
