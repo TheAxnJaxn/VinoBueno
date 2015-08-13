@@ -7,10 +7,13 @@ VinoBueno.Views.WinesIndex = Backbone.View.extend({
   // add class for CSS styling
   className: 'wines-index',
 
+  tagName: 'table',
+
   render: function () {
     var content = this.template({
       wines: this.collection
     });
+debugger
     this.$el.html(content);
     return this;
   },

@@ -12,6 +12,7 @@ Vino Bueno is a clone of Goodreads for wine reviews, built on Rails and Backbone
 - [X] Create accounts, sign up
 - [X] Sign in, Sign out
 - [X] Nav on all pages
+- [ ] Home page shows randomly-selected wines
 - [ ] View wine detail pages
 - [ ] Add new wines
 - [ ] Create reviews with ratings

@@ -54,8 +54,8 @@ review      | text      |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+name        | string    | not null
 user_id     | integer   | not null, foreign key (references users)
-title       | string    | not null
 
 
 ## cellar-ings

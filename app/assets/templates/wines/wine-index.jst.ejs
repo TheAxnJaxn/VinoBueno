@@ -1,11 +1,9 @@
-
-templates/wines/wine-index.jst.ejs
-
 <% wines.each(function (wine) { %>
   <tr>
 
     <td class="wine-mini-img">
-      <%= wine.images %>
+      blah
+      <%= wine.escape('img_url') %>
     </td>
 
     <td class="wine-mini-deets">
@@ -18,7 +16,8 @@ templates/wines/wine-index.jst.ejs
     </td>
 
     <td class="wine-mini-actions">
-      BUTTONS
+      buttons will go here<br/>
+      *****
     </td>
 
   </tr>
