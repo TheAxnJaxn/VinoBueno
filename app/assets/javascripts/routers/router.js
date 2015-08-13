@@ -16,7 +16,9 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   showWine: function(id) {
-
+    var view = new VinoBueno.Views.wineShow();
+    this.$rootEl.html(view);
+    this._swapView(view);
   },
 
   _swapView: function (view) {

@@ -17,28 +17,13 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+// sign-in and sign-up pages
  body.logged-out {
    background-image: image-url("home_wine.jpg");
    background-size: cover;
    background-repeat: no-repeat;
  }
 
- .navbar {
-   border-radius: 0px;
- }
-
- .navbar-default {
-   background-color: #9B0100;
-   border: 0px;
- }
-
- .navbar-default .navbar-brand {
-   color: white;
- }
-
- .navbar-default .navbar-nav > li > a {
-   color: white;
- }
 
 div.login-table {
    display: table;
@@ -80,4 +65,22 @@ div.login-table {
  html, body {
    height: 100%;
    margin: 0;
+ }
+
+ // navbar styling, across all pages
+ .navbar {
+   border-radius: 0px;
+ }
+
+ .navbar-default {
+   background-color: #9B0100;
+   border: 0px;
+ }
+
+ .navbar-default .navbar-brand {
+   color: white;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+   color: white;
  }
