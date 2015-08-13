@@ -7,6 +7,6 @@ window.VinoBueno = {
 
     var router = new VinoBueno.Routers.Router();
     Backbone.history.start();
-    
+
   }
 };
