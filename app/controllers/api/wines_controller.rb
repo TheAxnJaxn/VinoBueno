@@ -1,10 +1,14 @@
 class Api::WinesController < ApplicationController
 
   def index
-    rand_ids = [1, 1, 1]
-    # rand(Wine.count) + 1
-    @wines = Wine.find([rand_ids])
-    fail
+    rand_ids = []
+    count = Wine.count
+    3.times do |n|
+      rand_ids.push(rand(count) + 1)
+    end
+
+    @wines = Wine.find(rand_ids)
+    render json: @wines
   end
 
   def show
