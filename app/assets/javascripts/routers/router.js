@@ -21,6 +21,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   wineShow: function(id) {
+    
     var wine = VinoBueno.Collections.wines.getOrFetch(id);
 
     var view = new VinoBueno.Views.wineShow({

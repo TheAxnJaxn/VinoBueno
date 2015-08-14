@@ -15,11 +15,21 @@ VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
     });
 
     this.$el.html(content);
-    
+
     return this;
   },
 
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
+  },
+
+  events: {
+    'click td': 'loadWineShow'
+  },
+
+  loadWineShow: function (event) {
+    var wineID = $(event.currentTarget).data('wine-id');
+    Backbone.history.navigate('wines/' + wineID, { trigger: true });
   }
+
 });

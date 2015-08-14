@@ -1,11 +1,11 @@
 <% wines.each(function (wine) { %>
   <tr>
 
-    <td class="wine-mini-img">
+    <td class="wine-mini-img" data-wine-id="<%= wine.id %>">
       <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
     </td>
 
-    <td class="wine-mini-deets">
+    <td class="wine-mini-deets" data-wine-id="<%= wine.id %>">
       <ul>
         <li>Name: <%= wine.escape('name') %></li>
         <li>Maker: <%= wine.escape('maker') %></li>
@@ -14,9 +14,9 @@
       </ul>
     </td>
 
-    <td class="wine-mini-actions">
-      Buttons will go here<br/>
-      *****
+    <td class="wine-mini-actions" data-wine-id="<%= wine.id %>">
+      Buttons will go here - Cellar Phase<br/>
+      ***** - Review Phase
     </td>
 
   </tr>
