@@ -17,6 +17,9 @@ class Api::ReviewsController < ApplicationController
       render json: @review.errors.full_messages, status: :unprocessable_entity
   end
 
+  def update
+  end
+
   private
 
   def review_params

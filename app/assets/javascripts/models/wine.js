@@ -2,22 +2,21 @@ VinoBueno.Models.Wine = Backbone.Model.extend({
 
   urlRoot: 'api/wines',
 
-  // parse: function(response) {
-  //   if (response.image) {
-  //     this.image().first.set(response.image, { parse: true });
-  //     delete response.image;
-  //   }
-  //
-  //   return response;
-  // },
-  //
-  image: function() {
-    debugger
-    if (!this._image) {
-      this._image = new VinoBueno.Collections.Images([], { wine: this });
+  parse: function(response) {
+    if (response.reviews) {
+      this.reviews().set(response.reviews, { parse: true });
+      delete response.reviews;
     }
 
-    return this._image;
+    return response;
+  },
+
+  reviews: function () {
+    if (!this._reviews) {
+      this._reviews = new VinoBueno.Collections.Reviews();
+    }
+
+    return this._reviews;
   }
 
 });

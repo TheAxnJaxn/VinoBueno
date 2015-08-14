@@ -9,11 +9,11 @@
 
       <td class="wine-mini-deets">
         <ul>
-          <li>Name: <%= wine.escape('name') %></li>
-          <li>Maker: <%= wine.escape('maker') %></li>
-          <li>Description: <%= wine.escape('description') %></li>
-          <li>Type: <%= wine.escape('wine_type') %></li>
-          <li>Varietal: <%= wine.escape('varietal') %></li>
+          <li><b>Name:</b> <%= wine.escape('name') %></li>
+          <li><b>Maker:</b> <%= wine.escape('maker') %></li>
+          <li><b>Description:</b> <%= wine.escape('description') %></li>
+          <li><b>Type:</b> <%= wine.escape('wine_type') %></li>
+          <li><b>Varietal:</b> <%= wine.escape('varietal') %></li>
           * Add wine.grown and wine.vintage, if available *
         </ul>
       </td>
@@ -23,4 +23,9 @@
 </div>
 
 <div class="review-subview">
+  <div id="reviews">
+  </div>
+
+  <div id="review-form">
+  </div>
 </div>

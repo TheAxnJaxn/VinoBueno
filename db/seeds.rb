@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 guest = User.create(email: 'guest@example.com', password: 'password')
+User.create(email: 'tyrion@lannister.rock', password: 'paysdebts')
 
 # Wine 1
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439422377/cupcake-merlot_qxyfui.jpg",
@@ -46,6 +47,10 @@ Review.create(user_id: 1,
               wine_id: 2,
               rating: 4,
               review: "The brale label is really cool! I cook with wine, sometimes I even add it to the food. Either give me more wine or leave me alone.")
+Review.create(user_id: 2,
+              wine_id: 2,
+              rating: 5,
+              review: "It's not easy being drunk all the time. If it were easy, everyone would do it.")
 
 # Wine 3
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-red-blend-label_m9hq1v.jpg",

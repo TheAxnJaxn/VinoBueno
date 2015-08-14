@@ -8,6 +8,7 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.collection = this.model.reviews();
   },
 
   render: function () {
@@ -15,20 +16,28 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
       wine: this.model
     });
     this.$el.html(content);
-    // this.renderReviews();
-    // this.renderReviewForm();
+    this.renderReviews();
+    this.renderReviewForm();
     return this;
   },
 
-  // renderReviews: function () {
-  //   this.model.reviews().each(this.addReview.bind(this));
-  // },
-  //
-  // renderReviewForm: function () {
-  //   var view = new VinoBueno.Views.Reviews({
-  //     model: this.model
-  //   })
-  //   this.addSubview('.review-subview', view)
-  // }
+  renderReviews: function () {
+    this.model.reviews().each(this.addReview.bind(this));
+  },
+
+  renderReviewForm: function () {
+    var view = new VinoBueno.Views.Reviews({
+      model: this.model,
+      collection: this.collection
+    })
+    this.addSubview('.review-subview', view);
+  },
+
+  addReview: function (review) {
+      var view = new VinoBueno.Views.ReviewShow({
+        model: review
+      });
+      this.addSubview('#reviews', view);
+  }
 
 });
