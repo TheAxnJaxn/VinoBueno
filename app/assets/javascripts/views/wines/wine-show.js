@@ -1,12 +1,11 @@
 VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
 
-  // has this.model -> 1 wine
-
   template: JST['wines/wine-show'],
 
   className: 'wine-show-composite',
 
   initialize: function () {
+    // has this.model -> 1 wine
     this.listenTo(this.model, 'sync', this.render);
     this.collection = this.model.reviews();
   },

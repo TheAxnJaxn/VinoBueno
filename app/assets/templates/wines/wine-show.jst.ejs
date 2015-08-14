@@ -9,12 +9,17 @@
 
       <td class="wine-mini-deets">
         <ul>
-          <li><b>Name:</b> <%= wine.escape('name') %></li>
+          <li><h2><%= wine.escape('name') %></h2></li>
           <li><b>Maker:</b> <%= wine.escape('maker') %></li>
           <li><b>Description:</b> <%= wine.escape('description') %></li>
           <li><b>Type:</b> <%= wine.escape('wine_type') %></li>
           <li><b>Varietal:</b> <%= wine.escape('varietal') %></li>
-          * Add wine.grown and wine.vintage, if available *
+          <% if (wine.get('grown')) { %>
+            <li><b>Grown:</b> <%= wine.escape('grown') %></li>
+          <% } %>
+          <% if (wine.get('vintage')) { %>
+            <li><b>Vintage:</b> <%= wine.escape('vintage') %></li>
+          <% } %>
         </ul>
       </td>
 
