@@ -70,6 +70,6 @@ Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/
 Wine.create(name: "Enchanted Woods Bubbly",
             maker: "Once Upon A Vine",
             wine_type: "White",
-            varietal: "Blend - 45% Riesling, 40% Pinot Grigio, 9% Sauvignon Blanc and 6% other grapes",
+            varietal: "Blend",
             description: "Enchanting evenings start with enchanting wines. Our Enchanted Woods Bubbly is a delightfully effervescent white wine that makes a perfect accompaniment to any celebration, large or small. This light and fruity wine has flavors of juicy red apples, ripe pear, and lush pineapple, finished with a long creamy texture. This special limited release wine is produced only once a year.",
             grown: "California")
