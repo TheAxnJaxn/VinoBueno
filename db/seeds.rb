@@ -21,6 +21,12 @@ Wine.create(name: "Cupcake Vineyards Merlot",
             description: "Sourced from vineyards on California’s Central Coast, our Merlot is big and bold. Full-bodied yet smooth, the wine shows flavors of red cherries that evolve into decadent levels of cocoa, spice and espresso as well as a smooth finish. Moderated by the Pacific Ocean, the unique topography and climate of the sun-drenched Central Coast produces world-class wines. Our Merlot grapes are cool fermented for a slow process that retains aroma and complexity. A regimen of pump-overs extracts soft tannins and color, and grape skins are pressed before reaching dryness to preserve a lush tannin structure. Aging in American oak barrels adds more richness and complexity.",
             grown: "Central Coast, California")
 
+# Review
+Review.create(user_id: 1,
+              wine_id: 1,
+              rating: 5,
+              review: "Delectable! You can really taste the cherries. Definitely added this one to my cellar! Wine improves with age. The older I get, the better I like it.")
+
 # Wine 2
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/lazarus-white_qssdyq.jpg",
             url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/lazarus-white_qssdyq.jpg",
@@ -35,6 +41,12 @@ Wine.create(name: "Orange Label",
             grown: "Ribera del Gallego-Cinco Villas",
             vintage: 2007)
 
+# Review
+Review.create(user_id: 1,
+              wine_id: 2,
+              rating: 4,
+              review: "The brale label is really cool! I cook with wine, sometimes I even add it to the food. Either give me more wine or leave me alone.")
+
 # Wine 3
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-red-blend-label_m9hq1v.jpg",
             url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/onceuponavine-red-blend-label_m9hq1v.jpg",
@@ -47,6 +59,12 @@ Wine.create(name: "The Big Bad Red Blend",
             varietal: "Blend",
             description: "This wine is from United States, California region. A blend of several red varietals, The Big Bad Red blend appeases our inner dark side, satisfying that craving for the bold and daring. The wine leads with a bramble of berries, dark black plum and root beer flavors, framed by toasted spices. Fleshy and ripe, the palate delivers layers of black fruit with a savory and spicy character. Supple tannins hold flavors into a long, lasting finish. A perfect pairing for a dark and stormy night.",
             grown: "California")
+
+# Review
+Review.create(user_id: 1,
+              wine_id: 3,
+              rating: 2,
+              review: "I love the idea of 'Once Upon a Vine' (always been a Disney person), and the name and label of this bottle got my attention. But I didn't like it as much as I'd hoped. What wine goes with Captain Crunch?")
 
 # Wine 4
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-fairest-chardonnay_reoiwz.jpg",
@@ -61,6 +79,12 @@ Wine.create(name: "The Fairest Chardonnay",
             description: "Who's the fairest of them all? The Fairest Chardonnay offers a ripe nose of pear, guava, pineapple and creme brulee. These enchanting flavors linger well into the finish, leaving notes of citrus and spice. Relax with a glass of our classically elegant Chardonnay, lightly touched with oak to give it a creamy, indulgent texture. Let its lush flavors of honeysuckle, vanilla, and crème brûlée transport you to a magical vineyard far, far away.",
             grown: "California")
 
+# Review
+Review.create(user_id: 1,
+              wine_id: 4,
+              rating: 3,
+              review: "Age is just a number. It’s totally irrelevant unless, of course, you happen to be a bottle of wine. Penicillin cures, but wine makes people happy.")
+
 # Wine 5
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-enchanted-woods-bubbly_jmjiz7.jpg",
             url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/onceuponavine-enchanted-woods-bubbly_jmjiz7.jpg",
@@ -73,3 +97,9 @@ Wine.create(name: "Enchanted Woods Bubbly",
             varietal: "Blend",
             description: "Enchanting evenings start with enchanting wines. Our Enchanted Woods Bubbly is a delightfully effervescent white wine that makes a perfect accompaniment to any celebration, large or small. This light and fruity wine has flavors of juicy red apples, ripe pear, and lush pineapple, finished with a long creamy texture. This special limited release wine is produced only once a year.",
             grown: "California")
+
+# Review
+Review.create(user_id: 1,
+              wine_id: 5,
+              rating: 5,
+              review: "My only regret in life is that I didn’t drink enough Champagne. Accept what life offers you and try to drink from every cup. All wines should be tasted; some should only be sipped, but with others, drink the whole bottle.")
