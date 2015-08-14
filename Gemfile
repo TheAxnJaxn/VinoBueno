@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'cloudinary'
 gem 'figaro'
 
+gem 'serialize_json-rails'
+
 group :doc do
   gem 'sdoc', require: false
 end

@@ -6,8 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-guest = User.create(email: 'guest@example.com', password: 'password')
+User.create(email: 'guest@example.com', password: 'password')
 User.create(email: 'tyrion@lannister.rock', password: 'paysdebts')
+User.create(email: 'cersei@lannister.rock', password: 'winelover')
 
 # Wine 1
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439422377/cupcake-merlot_qxyfui.jpg",

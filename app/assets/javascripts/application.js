@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require serialize_json
 //= require_tree ./utils
 //= require bootstrap
 //= require vino_bueno
