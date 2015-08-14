@@ -1,10 +1,8 @@
 json.extract! wine, :id, :name, :maker, :wine_type, :varietal, :description, :grown, :vintage
 
-json.image do
-  json.img_url wine.image.url
-  json.img_url_thumb wine.image.url_thumb
-  json.img_id wine.image.id
-end
+json.img_url wine.image.url
+json.img_url_thumb wine.image.url_thumb
+json.img_id wine.image.id
 
 # Future phase - Reviews
 # json.reviews wine.reviews do |review|

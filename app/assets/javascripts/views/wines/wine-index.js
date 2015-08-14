@@ -1,4 +1,4 @@
-VinoBueno.Views.WinesIndex = Backbone.View.extend({
+VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
 
   // has this.collection
 
@@ -15,6 +15,7 @@ VinoBueno.Views.WinesIndex = Backbone.View.extend({
     });
 
     this.$el.html(content);
+    
     return this;
   },
 
