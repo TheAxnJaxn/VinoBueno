@@ -21,7 +21,6 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.renderCommunityReviews();
-    // this.renderReviewForm();
     return this;
   },
 
@@ -46,13 +45,5 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
     $('body').append(modal.$el);
     modal.render();
   }
-
-  // renderReviewForm: function () {
-  //   var view = new VinoBueno.Views.ReviewForm({
-  //     model: this.model,
-  //     collection: this.collection
-  //   })
-  //   this.addSubview('.review-subview', view);
-  // }
 
 });

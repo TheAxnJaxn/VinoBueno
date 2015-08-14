@@ -4,13 +4,13 @@
   <button class="close">&times;</button>
   <h3>New Review</h3>
   <form>
-    <input type="hidden" name="review[wine_id]" value="<%= wine.id %>">
+    <input type="hidden" name="review[review][wine_id]" value="<%= wine.id %>">
     <p>
-      <input class="text-field" type="text" name="review[rating]" placeholder="Rating">
+      <input class="text-field" type="text" name="review[review][rating]" placeholder="Rating">
     </p>
 
     <p>
-      <textarea name="review[review]" rows="10" cols="50" placeholder="Review"></textarea>
+      <textarea name="review[review][review]" rows="10" cols="50" placeholder="Review"></textarea>
     </p>
 
     <input type="submit" class="btn btn-primary" value="Add Review">
