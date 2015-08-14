@@ -20,11 +20,12 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  // composite view
   wineShow: function(id) {
-    
+
     var wine = VinoBueno.Collections.wines.getOrFetch(id);
 
-    var view = new VinoBueno.Views.wineShow({
+    var view = new VinoBueno.Views.WineShow({
       model: wine
     });
 

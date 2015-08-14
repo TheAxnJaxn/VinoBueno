@@ -1,0 +1,26 @@
+<div class='wine-detail-subview'>
+  <table>
+    <tr>
+
+      <td class="wine-img">
+        <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
+        Buttons will go here - Cellar Phase
+      </td>
+
+      <td class="wine-mini-deets">
+        <ul>
+          <li>Name: <%= wine.escape('name') %></li>
+          <li>Maker: <%= wine.escape('maker') %></li>
+          <li>Description: <%= wine.escape('description') %></li>
+          <li>Type: <%= wine.escape('wine_type') %></li>
+          <li>Varietal: <%= wine.escape('varietal') %></li>
+          * Add wine.grown and wine.vintage, if available *
+        </ul>
+      </td>
+
+    </tr>
+  </table>
+</div>
+
+<div class="review-subview">
+</div>
