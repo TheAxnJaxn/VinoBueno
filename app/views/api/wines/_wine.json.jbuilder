@@ -4,13 +4,6 @@ json.img_url wine.image.url
 json.img_url_thumb wine.image.url_thumb
 json.img_id wine.image.id
 
-# Future phase - Reviews
-# json.reviews wine.reviews do |review|
-#   json.extract! review, :id, :review, :rating, :wine_id, :user_id, :created_at, :updated_at
-#   json.user review.user, :id, :email
-#   json.wine review.wine, :id, :name, :maker, :wine_type, :varietal, :description, :grown, :vintage
-# end
-
 # Future phase - Cellars
 # if current_user.wines.include?(wine)
 #   current_user.cellars.each do |cellar|
