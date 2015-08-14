@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
 
   has_many :images, as: :imageable
 
+  has_many :reviews, class_name: "Review"
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

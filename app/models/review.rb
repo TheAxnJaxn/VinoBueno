@@ -12,4 +12,10 @@
 #
 
 class Review < ActiveRecord::Base
+
+  validates :user_id, :wine_id, :rating, presence: true
+
+  belongs_to :wine, class_name: "Wine"
+  belongs_to :user, class_name: "User"
+
 end

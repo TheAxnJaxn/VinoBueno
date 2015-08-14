@@ -20,4 +20,6 @@ class Wine < ActiveRecord::Base
 
   has_one :image, as: :imageable
 
+  has_many :reviews, class_name: "Review"
+
 end
