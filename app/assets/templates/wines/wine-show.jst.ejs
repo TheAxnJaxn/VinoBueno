@@ -4,7 +4,7 @@
 
       <td class="wine-img">
         <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
-        Buttons will go here - Cellar Phase
+        <button type="button" name="button">Add to Cellar</button><br/> - Cellar Phase
       </td>
 
       <td class="wine-mini-deets">
@@ -23,9 +23,9 @@
 </div>
 
 <div class="review-subview">
-  <div id="reviews">
-  </div>
+  <h3>Reviews for <%= wine.escape('name') %></h3>
+  <button type="button" name="button">Write a Review</button>
 
-  <div id="review-form">
+  <div class="reviews">
   </div>
 </div>
