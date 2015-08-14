@@ -10,7 +10,7 @@ guest = User.create(email: 'guest@example.com', password: 'password')
 
 # Wine 1
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439422377/cupcake-merlot_qxyfui.jpg",
-            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_100,h_100/cupcake-merlot_qxyfui.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/cupcake-merlot_qxyfui.jpg",
             imageable_id: 1,
             imageable_type: "Wine")
 
@@ -23,7 +23,7 @@ Wine.create(name: "Cupcake Vineyards Merlot",
 
 # Wine 2
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/lazarus-white_qssdyq.jpg",
-            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_100,h_100/lazarus-white_qssdyq.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/lazarus-white_qssdyq.jpg",
             imageable_id: 2,
             imageable_type: "Wine")
 
@@ -37,7 +37,7 @@ Wine.create(name: "Orange Label",
 
 # Wine 3
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-red-blend-label_m9hq1v.jpg",
-            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_100,h_100/onceuponavine-red-blend-label_m9hq1v.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/onceuponavine-red-blend-label_m9hq1v.jpg",
             imageable_id: 3,
             imageable_type: "Wine")
 
@@ -50,7 +50,7 @@ Wine.create(name: "The Big Bad Red Blend",
 
 # Wine 4
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-fairest-chardonnay_reoiwz.jpg",
-            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_100,h_100/onceuponavine-fairest-chardonnay_reoiwz.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/onceuponavine-fairest-chardonnay_reoiwz.jpg",
             imageable_id: 4,
             imageable_type: "Wine")
 
@@ -63,7 +63,7 @@ Wine.create(name: "The Fairest Chardonnay",
 
 # Wine 5
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/onceuponavine-enchanted-woods-bubbly_jmjiz7.jpg",
-            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_100,h_100/onceuponavine-enchanted-woods-bubbly_jmjiz7.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/onceuponavine-enchanted-woods-bubbly_jmjiz7.jpg",
             imageable_id: 5,
             imageable_type: "Wine")
 

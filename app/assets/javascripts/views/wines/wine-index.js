@@ -24,10 +24,11 @@ VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click td': 'loadWineShow'
+    'click .clickable': 'loadWineShow'
   },
 
   loadWineShow: function (event) {
+    event.preventDefault();
     var wineID = $(event.currentTarget).data('wine-id');
     Backbone.history.navigate('wines/' + wineID, { trigger: true });
   }
