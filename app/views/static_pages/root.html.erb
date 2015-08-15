@@ -6,9 +6,9 @@
 <script>
   $(document).ready(function(){
 
-    // BB only started when user is logged in,
-    // so we pass the current user as a global variable
-    // VinoBueno.CURRENT_USER = JSON.parse("<%%= current_user.to_json %>");
+    VinoBueno.CURRENT_USER = {
+          email: "<%= current_user.email %>"
+    };
 
     VinoBueno.initialize();
   });

@@ -19,19 +19,13 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
       wine: this.model
     });
     this.$el.html(content);
-    this.renderCommunityReviews();
+
+    var view = new VinoBueno.Views.ReviewsIndex({
+      wine: this.model
+    });
+    this.addSubview('.review-subview', view)
+
     return this;
-  },
-
-  renderCommunityReviews: function () {
-    this.model.reviews().each(this.addReview.bind(this));
-  },
-
-  addReview: function (review) {
-      var view = new VinoBueno.Views.ReviewShow({
-        model: review
-      });
-      this.addSubview('.reviews', view);
   },
 
   writeReview: function (event) {
