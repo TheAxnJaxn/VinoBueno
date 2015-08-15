@@ -2,20 +2,20 @@
 <div class="login-middle">
   <div id="sign-in-up">
 
-    <h1>Welcome to Vino Bueno</h1>
+    <%= image_tag "vino-bueno-red-2.png" %>
 
     <form class="" action="<%= session_url %>" method="post">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
       <p>
-        <input type="text" name="user[email]" value="" placeholder="Email">
+        <input type="text" name="user[email]" value="" placeholder="Email" class="form-control">
       </p>
 
       <p>
-        <input type="password" name="user[password]" value="" placeholder="Password">
+        <input type="password" name="user[password]" value="" placeholder="Password" class="form-control">
       </p>
 
-      <button type="submit">Sign In!</button>
+      <button type="submit">Sign In</button>
 
     </form>
 

@@ -17,6 +17,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+// navbar logo
+.navbar img {
+    height: 300%;
+    margin-top: -20px;
+}
+
 // sign-in and sign-up pages
  body.logged-out {
    background-image: image-url("home_wine.jpg");
@@ -24,6 +30,23 @@
    background-repeat: no-repeat;
  }
 
+ .form-control:focus {
+     border-color: grey;
+     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(192,192,192, 0.6);
+ }
+
+// all buttons
+button {
+    background-color: #9B0100;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    padding: inherit;
+}
+
+button:hover {
+    background-color: #C10100;
+}
 
 div.login-table {
    display: table;
@@ -41,11 +64,9 @@ div.login-table {
 
  div#sign-in-up {
    margin: 0 auto;
-   width: 100%;
-   max-width: 3in;
    text-align: left;
-   padding:1em;
-   box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+   padding: 1em 3em 1em 3em;
+   box-shadow: 0px 0px 50px rgba(155, 1, 0, 1);
    display: inline-block;
    border: 1px solid gray;
    border-radius: 5px;
@@ -86,7 +107,7 @@ div.login-table {
  }
 
  // wine description on wine show pages
- 
+
  .wine-show-composite {
     width: 80%;
     margin: auto;
