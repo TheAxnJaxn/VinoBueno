@@ -19,7 +19,7 @@ Vino Bueno is a clone of Goodreads for wine reviews, built on Rails and Backbone
 - [X] Create reviews with ratings
 - [ ] Create custom shelves/cellars
 - [ ] Add to shelves/cellars ('want to taste', 'tasted')
-- [ ] Search for wines
+- [X] Search for wines
 - [ ] Friend other users
 - [ ] View a feed of friend's wine reviews
 

@@ -4,9 +4,6 @@
   <button class="close">&times;</button>
   <h3>New Review</h3>
   <form>
-    <input type="hidden" name="review[user][user_email]" value="<%= VinoBueno.CURRENT_USER.email %>">
-    <input type="hidden" name="review[user][user_id]" value="<%= VinoBueno.CURRENT_USER.id %>">
-
     <input type="hidden" name="review[review][wine_id]" value="<%= wine.id %>">
     <p>
       <input class="text-field" type="text" name="review[review][rating]" placeholder="Rating">

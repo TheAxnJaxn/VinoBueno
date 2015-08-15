@@ -12,6 +12,7 @@ window.VinoBueno = {
 };
 
 $(document).ready(function() {
+  // adds listener to navbar search box
   $('.navbar-form').on('submit', function () {
     event.preventDefault();
     var searchTerm = event.currentTarget.elements[0].value;
