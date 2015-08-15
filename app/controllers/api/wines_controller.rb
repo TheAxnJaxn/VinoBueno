@@ -36,6 +36,17 @@ class Api::WinesController < ApplicationController
     render json: {}
   end
 
+  def search
+    term = "%" + params[:search] + "%"
+    @wines = Wine.where(
+      "LOWER(name) LIKE ? OR LOWER(maker) LIKE ? OR LOWER(varietal) LIKE ?",
+      term.downcase,
+      term.downcase,
+      term.downcase
+    )
+    render :index
+  end
+
   private
 
   def wine_params

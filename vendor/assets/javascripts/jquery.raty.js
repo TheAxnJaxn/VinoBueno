@@ -7,6 +7,9 @@
  * @doc     : http://wbotelhos.com/raty
  * @version : 2.7.0
  *
+ *
+ * With fixes from an App Academy instructor
+ *
  */
 
 ;

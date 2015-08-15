@@ -6,7 +6,8 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'index',
-    'wines/:id': 'wineShow'
+    'wines/:id': 'wineShow',
+    'wines/search/(?:queryString)': 'searchWineIndex'
   },
 
   index: function () {
@@ -27,6 +28,18 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
 
     var view = new VinoBueno.Views.WineShow({
       model: wine
+    });
+
+    this._swapView(view);
+  },
+
+  searchWineIndex: function (queryString) {
+    var searchedCollection = new VinoBueno.Collections.Wines();
+    searchedCollection.url = 'api/wines/search?' + queryString;
+    searchedCollection.fetch();
+
+    var view = new VinoBueno.Views.WinesIndex({
+      collection: searchedCollection
     });
 
     this._swapView(view);
