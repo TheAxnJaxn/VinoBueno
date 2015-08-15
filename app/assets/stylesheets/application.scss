@@ -17,6 +17,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ // #9B0100
+ // #5B0000
+ // #DB0100
+ // #E80100
+ // #C10100
+
 // navbar logo
 .navbar img {
     height: 300%;
@@ -42,6 +48,7 @@ button {
     border-radius: 5px;
     border: 0px;
     padding: inherit;
+    margin-right: 10px;
 }
 
 button:hover {

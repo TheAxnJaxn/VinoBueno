@@ -5,17 +5,22 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(
-                    params[:user][:email],
-                    params[:user][:password])
 
-      if user
-        login!(user)
-        redirect_to root_url
-      else
-        flash.now[:errors] = ["Invalid username or password"]
-        render :signin
-      end
+    if params["type"] == "guest"
+      user = User.find_by_email("guest@example.com")
+    else
+      user = User.find_by_credentials(
+                      params[:user][:email],
+                      params[:user][:password])
+    end
+
+    if user
+      login!(user)
+      redirect_to root_url
+    else
+      flash.now[:errors] = ["Invalid username or password"]
+      render :signin
+    end
   end
 
   def destroy

@@ -1,24 +1,24 @@
 <div class="login-table">
-<div class="login-middle">
-  <div id="sign-in-up">
+  <div class="login-middle">
+    <div id="sign-in-up">
 
-    <%= image_tag "vino-bueno-red-2.png" %>
+      <%= image_tag "vino-bueno-red-2.png" %>
 
-    <form class="" action="<%= session_url %>" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <form class="" action="<%= session_url %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-      <p>
-        <input type="text" name="user[email]" value="" placeholder="Email" class="form-control">
-      </p>
+        <p>
+          <input type="text" name="user[email]" value="" placeholder="Email" class="form-control">
+        </p>
 
-      <p>
-        <input type="password" name="user[password]" value="" placeholder="Password" class="form-control">
-      </p>
+        <p>
+          <input type="password" name="user[password]" value="" placeholder="Password" class="form-control">
+        </p>
 
-      <button type="submit">Sign In</button>
+        <button type="submit">Sign In</button><button type="submit" name="type" value="guest">Guest Sign In</button>
 
-    </form>
+      </form>
 
+    </div>
   </div>
-</div>
 </div>
