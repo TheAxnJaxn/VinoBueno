@@ -4,3 +4,5 @@ VinoBueno.Collections.Images = Backbone.Collection.extend({
 
   url: 'api/images'
 });
+
+CloudinaryDemo.Collections.images = new CloudinaryDemo.Collections.Images();

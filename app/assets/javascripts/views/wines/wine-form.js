@@ -16,7 +16,8 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
   events: {
     'click .close': 'closeModal',
     'click .m-background': 'remove',
-    'submit form': 'createWine'
+    'submit form': 'createWine',
+    'click #upload-widget-opener': 'uploadImage'
   },
 
   closeModel: function (event) {
@@ -26,6 +27,24 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
 
   createWine: function (event) {
     debugger
+  },
+
+  uploadImage: function (event) {
+    var image = new VinoBueno.Models.Image();
+    event.preventDefault();
+
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+      var data = result[0];
+      image.set({
+        url: data.url,
+        url_thumb: data.thumbnail_url
+      });
+      image.save({}, {
+        success: function(){
+          VinoBueno.Collections.images.add(image);
+        }
+      });
+    });
   }
 
 });
