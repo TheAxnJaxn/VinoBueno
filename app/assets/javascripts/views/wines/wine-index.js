@@ -5,9 +5,7 @@ VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
   template: JST['wines/wine-index'],
 
   // add class for CSS styling
-  className: 'wines-index',
-
-  tagName: 'table',
+  className: 'wines-index container',
 
   render: function () {
     var content = this.template({
