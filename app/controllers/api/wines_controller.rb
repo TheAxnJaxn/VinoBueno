@@ -9,7 +9,7 @@ class Api::WinesController < ApplicationController
   end
 
   def index
-    @wines = Wine.all.includes(:image).sample(3)
+    @wines = Wine.all.includes(:image).sample(5)
     # uses views/api/wines/index.json.jbuilder
     render :index
   end

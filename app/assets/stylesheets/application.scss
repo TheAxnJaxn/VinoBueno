@@ -128,11 +128,11 @@ div.login-table {
     margin: auto;
 }
 
- // new review modal on wine show pages
+ // modals styling
 
  .m-background {
   background: rgba(92, 88, 88, 0.6);
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -142,13 +142,14 @@ div.login-table {
 
 .m-content {
   z-index: 2;
-  position: absolute;
-  top: 25%;
-  left: 25%;
+  position: fixed;
   background-color: white;
   padding: 1pc;
-  border: 1px solid;
   border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  margin-top: -25%;
+  margin-left: -25%;
 }
 
 input.btn.btn-primary {
