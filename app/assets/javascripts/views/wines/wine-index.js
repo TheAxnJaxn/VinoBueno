@@ -1,6 +1,6 @@
 VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
 
-  // has this.collection
+  // this.collection -> wines
 
   template: JST['wines/wine-index'],
 
@@ -22,13 +22,24 @@ VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click .clickable': 'loadWineShow'
+    'click .clickable': 'loadWineShow',
+    'click .btn-new-wine': 'createWine'
   },
 
   loadWineShow: function (event) {
     event.preventDefault();
     var wineID = $(event.currentTarget).data('wine-id');
     Backbone.history.navigate('wines/' + wineID, { trigger: true });
+  },
+
+  createWine: function (event) {
+    var newWine = new VinoBueno.Models.Wine();
+    var modal = new VinoBueno.Views.WineForm({
+      model: newWine,
+      collection: this.collection
+    });
+    $('body').append(modal.$el);
+    modal.render();
   }
 
 });
