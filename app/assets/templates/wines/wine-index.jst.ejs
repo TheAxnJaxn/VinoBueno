@@ -12,7 +12,7 @@
 
     <div class="wine-mini-deets  col-md-6 col-xs-6">
       <a href="#/wines/<%= wine.id %>" class="clickable" data-wine-id="<%= wine.id %>">
-        <ul>
+        <ul class="list-unstyled">
           <li>Name: <%= wine.escape('name') %></li>
           <li>Maker: <%= wine.escape('maker') %></li>
           <li>Type: <%= wine.escape('wine_type') %></li>

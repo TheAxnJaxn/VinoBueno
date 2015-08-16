@@ -22,12 +22,18 @@ class Api::WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
+    fail
+    createImage
 
     if @wine.save
       render json: @wine
     else
       render json: @wine.errors.full_messages, status: :unprocessable_entity
     end
+  end
+
+  def createImage
+    @image = Image.new(image_params)
   end
 
   def destroy
@@ -51,6 +57,10 @@ class Api::WinesController < ApplicationController
 
   def wine_params
     params.require(:wine).permit(:name, :maker, :wine_type, :varietal, :description, :grown, :vintage)
+  end
+
+  def image_params
+    params.require(:image).permit(:url)
   end
 end
 
