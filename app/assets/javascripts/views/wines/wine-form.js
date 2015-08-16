@@ -35,15 +35,25 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
 
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
+
+      debugger
       image.set({
         url: data.url,
-        url_thumb: data.thumbnail_url
+        url_thumb: data.thumbnail_url,
+        imageable_type: "Wine",
+        // imageable_id: this.model.id
       });
-      image.save({}, {
-        success: function(){
-          VinoBueno.Collections.images.add(image);
-        }
-      });
+
+      $('#upload-widget-opener').remove()
+      $('.form-wine-image').text('Image Uploaded')
+
+      // can't save image to VinoBueno DB
+      // until wine is first saved
+      // image.save({}, {
+      //   success: function(){
+      //     VinoBueno.Collections.images.add(image);
+      //   }
+      // });
     });
   }
 
