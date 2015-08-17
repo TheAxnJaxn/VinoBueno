@@ -128,6 +128,10 @@ div.login-table {
     margin: auto;
 }
 
+.review-subview ul {
+    list-style-type: none;
+}
+
  // modals styling
 
  .m-background {
@@ -198,4 +202,34 @@ a.clickable {
     display: inline-block;
     width: 100%;
     height: 100%;
+}
+
+// star styling
+
+a.star-off {
+    color: #555;
+}
+a.star-on {
+    color: #C10100;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-size: 20px;
+}
+.rating > a {
+  display: inline-block;
+  position: relative;
+}
+.rating > a:hover,
+.rating > a:hover ~ a {
+  color: transparent;
+}
+.rating > a:hover:before,
+.rating > a:hover ~ a:before {
+   content: "\2605";
+   position: absolute;
+   left: 0;
+   color: #C10100;
 }
