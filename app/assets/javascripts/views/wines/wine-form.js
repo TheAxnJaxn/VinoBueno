@@ -31,7 +31,18 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
 
     this.model.save(formData, {
       success: function (wine) {
-        this._image.save({ imageable_id: wine.id});
+        // sets default image if none was provided
+        if (this._image === undefined) {
+          this._image = new VinoBueno.Models.Image({
+            url: 'http://res.cloudinary.com/dpvk3lafz/image/upload/v1439831649/vino-bueno-no-img_n8nyjz.png',
+            url_thumb: 'http://res.cloudinary.com/dpvk3lafz/image/upload/h_150,w_150/vino-bueno-no-img_n8nyjz.png'
+          });
+        }
+        this._image.save({
+          imageable_id: wine.id,
+          imageable_type: "Wine"
+        });
+
         this.collection.add(wine, { merge: true });
         this.remove();
         Backbone.history.navigate("/wines/" + wine.id, { trigger: true });
@@ -77,14 +88,6 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
       } else {
         // flash error
       }
-
-      // can't save image to VinoBueno DB
-      // until wine is first saved
-      // image.save({}, {
-      //   success: function(){
-      //     VinoBueno.Collections.images.add(image);
-      //   }
-      // });
     }.bind(this));
   }
 

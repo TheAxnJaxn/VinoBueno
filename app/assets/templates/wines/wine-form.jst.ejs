@@ -16,13 +16,6 @@
     </p>
 
     <p>
-      <label for="wine_image">*Upload Image:</label>
-      <span class="form-wine-image">
-        <button id="upload-widget-opener">Upload Image</button>
-      </span>
-    </p>
-
-    <p>
       <label for="wine_type">*Type:</label>
       <select name="wine[wine][wine_type]">
         <option value="Red">Red</option>
@@ -41,9 +34,16 @@
 
     <p>
       <label for="wine_description">*Description:</label>
-      <textarea name="wine[wine][description]" rows="10" cols="50" placeholder="Description"></textarea>
+      <textarea name="wine[wine][description]" rows="8" cols="40" placeholder="Description"></textarea>
     </p>
 
+    <p>
+      <label for="wine_image">Upload Image:</label>
+      <span class="form-wine-image">
+        <button id="upload-widget-opener">Upload Image</button>
+      </span>
+    </p>
+    
     <p>
       <label for="wine_grown">Region:</label>
       <input class="text-field" type="text" name="wine[wine][grown]" placeholder="Location Grown">

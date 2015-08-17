@@ -16,7 +16,7 @@ class Api::WinesController < ApplicationController
 
   def show
     @wine = Wine.find(params[:id])
-    # uses views/api/wines/show.json.jbuilde
+    # uses views/api/wines/show.json.jbuilder
     render :show
   end
 
