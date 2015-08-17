@@ -7,15 +7,24 @@ VinoBueno.Views.ReviewsIndex = Backbone.CompositeView.extend({
 
   template: JST['reviews/review-index'],
 
-  className: 'reviews-index',
+  className: 'review-composite-subview',
 
   render: function () {
     var content = this.template({
       wine: this.model
     });
     this.$el.html(content);
+    this.renderMyReview();
     this.renderCommunityReviews();
     return this;
+  },
+
+  renderMyReview: function () {
+    this.model.reviews().each(function(review) {
+      if (VinoBueno.CURRENT_USER.id == review.attributes.user.id) {
+        this.addMyReview(review);
+      }
+    }.bind(this))
   },
 
   renderCommunityReviews: function () {
@@ -26,7 +35,14 @@ VinoBueno.Views.ReviewsIndex = Backbone.CompositeView.extend({
       var view = new VinoBueno.Views.ReviewShow({
         model: review
       });
-      this.addSubview('.reviews', view);
+      this.addSubview('.community-reviews', view);
+  },
+
+  addMyReview: function (review) {
+    var view = new VinoBueno.Views.ReviewShow({
+      model: review
+    });
+    this.addSubview('.my-review', view);
   }
 
 });
