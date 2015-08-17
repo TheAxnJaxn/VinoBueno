@@ -17,9 +17,10 @@
   </script>
 
 </head>
+
 <body class="<%= logged_in? ? 'logged-in' : 'logged-out' %>">
   <%= render "shared/nav" %>
   <%= yield %>
-
 </body>
+
 </html>
