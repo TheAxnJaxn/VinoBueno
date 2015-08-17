@@ -4,13 +4,13 @@
 <% wines.each(function (wine) { %>
   <div class="wine-mini col-md-12 row" data-wine-id="<%= wine.id %>">
 
-    <div class="wine-mini-img  col-md-2 col-xs-6">
+    <div class="wine-mini-img col-md-2 col-xs-6">
       <a href="#/wines/<%= wine.id %>" data-wine-id="<%= wine.id %>" class="clickable">
         <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
       </a>
     </div>
 
-    <div class="wine-mini-deets  col-md-6 col-xs-6">
+    <div class="wine-mini-deets col-md-6 col-xs-6">
       <a href="#/wines/<%= wine.id %>" class="clickable" data-wine-id="<%= wine.id %>">
         <ul class="list-unstyled">
           <li>Name: <%= wine.escape('name') %></li>
@@ -21,7 +21,7 @@
       </a>
     </div>
 
-    <div class="wine-mini-actions  col-md-4 col-xs-12" data-wine-id="<%= wine.id %>">
+    <div class="wine-mini-actions col-md-4 col-xs-12" data-wine-id="<%= wine.id %>">
       Buttons will go here - Cellar Phase<br/>
       ***** - Review Phase
     </div>
