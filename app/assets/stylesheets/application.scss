@@ -206,17 +206,17 @@ a.clickable {
 
 // star styling
 
-a.star-off {
+span.star-off {
     color: #555;
 }
-a.star-on {
+span.star-on {
     color: #C10100;
 }
 
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
-  text-size: 20px;
+  font-size: 20px;
 }
 .rating > a {
   display: inline-block;
