@@ -2,7 +2,7 @@
 <button class="btn-new-wine">Add New Wine</button>
 
 <% wines.each(function (wine) { %>
-  <div class="wine-mini col-md-12 row" data-wine-id="<%= wine.id %>">
+  <div class="wine-mini row" data-wine-id="<%= wine.id %>">
 
     <div class="wine-mini-img col-md-2 col-xs-6">
       <a href="#/wines/<%= wine.id %>" data-wine-id="<%= wine.id %>" class="clickable">

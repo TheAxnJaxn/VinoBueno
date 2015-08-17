@@ -47,7 +47,7 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
     formData.wine.maker = this.toTitleCase(formData.wine.maker);
     formData.wine.varietal = this.toTitleCase(formData.wine.varietal);
     formData.wine.grown = this.toTitleCase(formData.wine.grown);
-    formData.wine.vintage = parseInt(formData.wine.vintage, 10);
+    // formData.wine.vintage = parseInt(formData.wine.vintage, 10);
     return formData;
   },
 
@@ -60,8 +60,8 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
     event.preventDefault();
 
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
-      // error is null if image upload was successful
 
+      // error is null if image upload was successful
       if (error === null) {
         var data = result[0];
         var thumb = data.thumbnail_url.replace(/upload\/.*\//, 'upload/h_150,w_150/')
@@ -73,6 +73,7 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
 
         $('#upload-widget-opener').remove()
         $('.form-wine-image').text('Image Uploaded')
+                            .append('<img src="' + thumb + '" />')
       } else {
         // flash error
       }
@@ -84,7 +85,7 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
       //     VinoBueno.Collections.images.add(image);
       //   }
       // });
-    });
-  }.bind(this)
+    }.bind(this));
+  }
 
 });

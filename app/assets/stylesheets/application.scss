@@ -157,6 +157,11 @@ input.btn.btn-primary {
     border: 1px solid #9B0100;
 }
 
+button.close:hover {
+    background-color: white;
+    box-shadow: 0px 0px 10px white;
+}
+
 // mobile size > navbar > dropdown
 .navbar-default .navbar-toggle {
   border-color: transparent;
