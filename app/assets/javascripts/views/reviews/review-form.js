@@ -8,9 +8,10 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
   className: 'review-form',
 
   events: {
-    'click .close': 'closeModal',
+    'click .close': 'remove',
     'click .m-background': 'remove',
-    'submit form': 'createReview'
+    'submit form': 'createReview',
+    'click .star-click': 'setRating'
   },
 
   initialize: function (options) {
@@ -26,11 +27,6 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
     return this;
   },
 
-  closeModal: function () {
-    event.preventDefault();
-    this.remove();
-  },
-
   createReview: function (event) {
     event.preventDefault();
     var formData = $(event.currentTarget).serializeJSON().review;
@@ -42,6 +38,12 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
         this.remove();
       }.bind(this)
     });
+  },
+
+  setRating: function (event) {
+    event.preventDefault();
+    this.model.set('rating', event.currentTarget.title)
+    this.render();
   }
 
 });

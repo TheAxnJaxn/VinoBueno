@@ -1,17 +1,17 @@
 
 <li class="rating">
   <% if (VinoBueno.CURRENT_USER.id == review.attributes.user_id) { %>
-    <a href="#" title="1">&#x2605;</a>
-    <a href="#" title="2">&#x2605;</a>
-    <a href="#" title="3">&#x2605;</a>
-    <a href="#" title="4">&#x2605;</a>
     <a href="#" title="5">&#x2605;</a>
+    <a href="#" title="4">&#x2605;</a>
+    <a href="#" title="3">&#x2605;</a>
+    <a href="#" title="2">&#x2605;</a>
+    <a href="#" title="1">&#x2605;</a>
   <% } else { %>
-    <span title="1" class="<%= (review.get('rating') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-    <span title="2" class="<%= (review.get('rating') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+    <span title="5" class="<%= (review.get('rating') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+    <span title="4" class="<%= (review.get('rating') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</span>
     <span title="3" class="<%= (review.get('rating') >= 3) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-    <span title="4" class="<%= (review.get('rating') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-    <span title="5" class="<%= (review.get('rating') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+    <span title="2" class="<%= (review.get('rating') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+    <span title="1" class="<%= (review.get('rating') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</span>
   <% } %>
 </li>
 

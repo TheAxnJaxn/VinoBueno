@@ -6,6 +6,8 @@ VinoBueno.Views.ReviewShow = Backbone.View.extend({
 
   tagName: 'ul',
 
+  className: 'list-unstyled',
+
   render: function () {
     var content = this.template({
       review: this.model,
