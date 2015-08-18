@@ -26,7 +26,7 @@
             <span title="4" class="<%= (wine.get('avg_rev') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</span>
             <span title="5" class="<%= (wine.get('avg_rev') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</span>
           </li>
-          <li>Average Rating: <%= wine.escape('avg_rev') %></li>
+          <li class="small-grey"> - <%= wine.escape('avg_rev') %> average rating - </li>
           <li>Maker: <%= wine.escape('maker') %></li>
           <li>Type: <%= wine.escape('wine_type') %></li>
           <li>Varietal: <%= wine.escape('varietal') %></li>
