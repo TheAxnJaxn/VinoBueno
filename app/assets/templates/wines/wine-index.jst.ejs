@@ -1,24 +1,28 @@
-<h3>Wines:</h3>
 <button class="btn-new-wine">Add New Wine</button>
+<h3>Wines:</h3>
 
 <% wines.each(function (wine) { %>
   <div class="wine-mini row" data-wine-id="<%= wine.id %>">
 
-    <div class="wine-mini-img col-md-2 col-xs-6">
+    <div class="wine-mini-img col-md-3 col-xs-6">
       <a href="#/wines/<%= wine.id %>" data-wine-id="<%= wine.id %>" class="clickable">
         <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
       </a>
     </div>
 
-    <div class="wine-mini-deets col-md-6 col-xs-6">
-      <a href="#/wines/<%= wine.id %>" class="clickable" data-wine-id="<%= wine.id %>">
+    <div class="wine-mini-deets col-md-5 col-xs-6">
         <ul class="list-unstyled">
-          <li>Name: <%= wine.escape('name') %></li>
+          <li>
+            <h4>
+              <a href="#/wines/<%= wine.id %>" class="clickable" data-wine-id="<%= wine.id %>">
+                <%= wine.escape('name') %>
+              </a>
+            </h4>
+          </li>
           <li>Maker: <%= wine.escape('maker') %></li>
           <li>Type: <%= wine.escape('wine_type') %></li>
           <li>Varietal: <%= wine.escape('varietal') %></li>
         </ul>
-      </a>
     </div>
 
     <div class="wine-mini-actions col-md-4 col-xs-12" data-wine-id="<%= wine.id %>">

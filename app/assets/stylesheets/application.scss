@@ -35,6 +35,16 @@
   color: white;
 }
 
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: white;
+  background-color: #C10100;
+}
+
 // all buttons
 button {
     background-color: #9B0100;
@@ -181,36 +191,47 @@ button.close:hover {
 }
 
 button.navbar-toggle.collapsed:hover {
-    background-color: #C10100;
+  background-color: #C10100;
 }
 
 // wines index pages styling
 .wines-index {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 .wine-mini {
-    margin: 10px;
+  margin: 10px;
 }
 
 .wine-mini-deets {
   height: 150px;
 }
 
+.wine-mini.row {
+  border-top: 1px solid #9B0100;
+  padding: 10px;
+}
+
 a.clickable {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #0A4368;
+}
+
+button.btn-new-wine {
+  display: inline-block;
+  float: right;
+  width: auto;
 }
 
 // star styling
-
 span.star-off {
-    color: #555;
+  color: #555;
 }
 span.star-on {
-    color: #C10100;
+  color: #C10100;
 }
 
 .rating {
