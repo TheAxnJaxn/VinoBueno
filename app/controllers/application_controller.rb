@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :require_signed_in!
+  helper_method :current_user, :logged_in?, :require_signed_in!, :require_logged_in!
 
   private
 
@@ -23,8 +23,16 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
+  # for Rails side
   def require_signed_in!
     redirect_to new_session_url unless logged_in?
+  end
+
+  # for Backbone side
+  def require_logged_in!
+    unless logged_in?
+      render json: ["You must be signed in to perform that action!"], status: :unauthorized
+    end
   end
 
 end

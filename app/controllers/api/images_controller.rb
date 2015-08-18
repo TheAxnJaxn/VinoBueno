@@ -1,5 +1,7 @@
 class Api::ImagesController < ApplicationController
 
+  before_action :require_logged_in!
+
   def create
     @image = Image.new(img_params)
 

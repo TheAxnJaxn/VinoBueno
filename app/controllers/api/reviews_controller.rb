@@ -1,11 +1,11 @@
 class Api::ReviewsController < ApplicationController
 
-  # before_action :require_logged_in!
+  before_action :require_logged_in!
 
   def destroy
     @review = Review.find(params[:id])
     @review.try(:destroy)
-    render json: {}
+    render json: @review
   end
 
   def create
