@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  name        :string           not null
+#  avg_rating  :float            not null
 #  maker       :string           not null
 #  wine_type   :string           not null
 #  varietal    :string           not null

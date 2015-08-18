@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150814052910) do
 
   create_table "wines", force: :cascade do |t|
     t.string   "name",        null: false
+    t.float    "avg_rating",  null: false
     t.string   "maker",       null: false
     t.string   "wine_type",   null: false
     t.string   "varietal",    null: false

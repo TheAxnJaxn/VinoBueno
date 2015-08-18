@@ -133,7 +133,7 @@ div.login-table {
 
  // wine description on wine show pages
 
- .wine-show-composite {
+.wine-show-composite {
     width: 80%;
     margin: auto;
 }
@@ -144,6 +144,12 @@ div.login-table {
 
 .review-header {
   border-top: 1px solid #9B0100;
+}
+
+button.btn-new-review {
+  display: inline-block;
+  float: right;
+  width: auto;
 }
 
  // modals styling
@@ -257,4 +263,12 @@ span.star-on {
    position: absolute;
    left: 0;
    color: #C10100;
+}
+
+.rating > span {
+  margin: -2px;
+}
+
+li.smaller-rating {
+  font-size: 18px;
 }

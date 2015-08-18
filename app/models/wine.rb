@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  name        :string           not null
+#  avg_rating  :float            not null
 #  maker       :string           not null
 #  wine_type   :string           not null
 #  varietal    :string           not null
@@ -17,13 +18,19 @@
 class Wine < ActiveRecord::Base
 
   validates :name, :maker, :wine_type, :varietal, :description, presence: true
-  before_save :ensure_avg_rating
+  before_validation :ensure_avg_rating
 
   has_one :image, as: :imageable
 
   has_many :reviews, class_name: "Review"
 
   def ensure_avg_rating
-    self.avg_rating = reviews.average("rating").to_f
+    self.avg_rating = reviews.average(:rating).to_f
   end
+
+  def update_avg_rating
+    self.avg_rating = reviews.average(:rating).to_f
+    self.save
+  end
+
 end
