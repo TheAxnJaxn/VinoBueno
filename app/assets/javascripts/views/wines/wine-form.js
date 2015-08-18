@@ -14,7 +14,7 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
   },
 
   events: {
-    'click .close': 'closeModal',
+    'click .close': 'remove',
     'click .m-background': 'remove',
     'submit form': 'createWine',
     'click #upload-widget-opener': 'uploadImage'

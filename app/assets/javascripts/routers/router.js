@@ -36,7 +36,9 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   searchWineIndex: function (queryString) {
     var searchedCollection = new VinoBueno.Collections.Wines();
     searchedCollection.url = 'api/wines/search?' + queryString;
-    searchedCollection.fetch();
+    searchedCollection.fetch({
+      // data: {search: queryString }
+    });
 
     var view = new VinoBueno.Views.WinesIndex({
       collection: searchedCollection
