@@ -34,8 +34,8 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
         // sets default image if none was provided
         if (this._image === undefined) {
           this._image = new VinoBueno.Models.Image({
-            url: 'http://res.cloudinary.com/dpvk3lafz/image/upload/v1439831649/vino-bueno-no-img_n8nyjz.png',
-            url_thumb: 'http://res.cloudinary.com/dpvk3lafz/image/upload/h_150,w_150/vino-bueno-no-img_n8nyjz.png'
+            url: 'http://res.cloudinary.com/dpvk3lafz/image/upload/v1439878993/vino-bueno-no-img_uev29x.png',
+            url_thumb: 'http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/vino-bueno-no-img_uev29x.png'
           });
         }
         this._image.save({
