@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'search', on: :collection
     end
     resources :images, only: [:create]
-    resources :reviews, only: [:create, :update, :destroy]
+    resources :reviews, only: [:create, :update, :destroy, :index]
   end
 
 end

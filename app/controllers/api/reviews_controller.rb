@@ -19,6 +19,11 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+  def index
+    @reviews = Review.all.where(user_id: current_user.id)
+    render json: @reviews
+  end
+
   def update
   end
 
