@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: https://vinobueno.herokuapp.com/
+[heroku]: http://vinobueno.herokuapp.com/
 
 ## Minimum Viable Product
 Vino Bueno is a clone of Goodreads for wine reviews, built on Rails and Backbone. Users can:
@@ -81,3 +81,4 @@ see after logging in.
 - [ ] Like reviews
 - [ ] Rating details for wine show pages
 - [ ] Editable user profile
+- [ ] Get Cloudinary to work on https of VinoBueno
