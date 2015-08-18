@@ -72,7 +72,7 @@ Review.create(user_id: user3.id,
 Review.create(user_id: user1.id,
               wine_id: wine2.id,
               rating: 3,
-              review: "The brale label is really cool! I cook with wine, sometimes I even add it to the food. Either give me more wine or leave me alone.")
+              review: "The braille label is really cool! I cook with wine, sometimes I even add it to the food. Either give me more wine or leave me alone.")
 Review.create(user_id: user2.id,
               wine_id: wine2.id,
               rating: 2,

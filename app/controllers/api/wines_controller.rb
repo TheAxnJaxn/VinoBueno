@@ -4,13 +4,11 @@ class Api::WinesController < ApplicationController
 
   def index
     @wines = Wine.all.includes(:image).sample(5)
-    # uses views/api/wines/index.json.jbuilder
     render :index
   end
 
   def show
-    @wine = Wine.find(params[:id])
-    # uses views/api/wines/show.json.jbuilder
+    @wine = Wine.where(id: params[:id]).includes(:reviews)[0]
     render :show
   end
 

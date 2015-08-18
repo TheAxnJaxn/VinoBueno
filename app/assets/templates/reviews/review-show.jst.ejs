@@ -1,6 +1,6 @@
 
 <li class="rating">
-  <% if (VinoBueno.CURRENT_USER.id == user.id) { %>
+  <% if (VinoBueno.CURRENT_USER.id == review.attributes.user_id) { %>
     <a href="#" title="1">&#x2605;</a>
     <a href="#" title="2">&#x2605;</a>
     <a href="#" title="3">&#x2605;</a>
@@ -16,9 +16,5 @@
 </li>
 
 <li>
-  User: <%= user.email %>
-</li>
-
-<li>
-  Review: <%= review.escape('review') %>
+  <%= review.escape('review') %>
 </li>

@@ -21,7 +21,7 @@ VinoBueno.Views.ReviewsIndex = Backbone.CompositeView.extend({
 
   renderMyReview: function () {
     this.model.reviews().each(function(review) {
-      if (VinoBueno.CURRENT_USER.id == review.attributes.user.id) {
+      if (VinoBueno.CURRENT_USER.id == review.attributes.user_id) {
         this.addMyReview(review);
       }
     }.bind(this))
