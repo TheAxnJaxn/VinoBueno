@@ -8,6 +8,7 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
   className: 'review-form',
 
   events: {
+    'click .m-content': 'enterContent',
     'click .close': 'remove',
     'click .m-background': 'remove',
     'submit form': 'createReview',
@@ -44,6 +45,10 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
     event.preventDefault();
     this.model.set('rating', event.currentTarget.title)
     this.render();
+  },
+
+  enterContent: function (event) {
+    event.stopPropagation();
   }
 
 });

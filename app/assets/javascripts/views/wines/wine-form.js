@@ -14,6 +14,7 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
   },
 
   events: {
+    'click .m-content': 'enterContent',
     'click .close': 'remove',
     'click .m-background': 'remove',
     'submit form': 'createWine',
@@ -87,6 +88,10 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
         // add flash error
       }
     }.bind(this));
+  },
+
+  enterContent: function (event) {
+    event.stopPropagation();
   }
 
 });
