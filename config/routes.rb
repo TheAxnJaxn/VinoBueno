@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
     resources :images, only: [:create]
     resources :reviews, only: [:create, :update, :destroy, :index, :show]
+    resources :cellars, only: [:index]
   end
 
 end

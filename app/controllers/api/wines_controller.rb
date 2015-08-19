@@ -25,7 +25,7 @@ class Api::WinesController < ApplicationController
   def destroy
     @wine = Wine.find(params[:id])
     @wine.try(:destroy)
-    render json: {}
+    render json: @wine
   end
 
   def search
