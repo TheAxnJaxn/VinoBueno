@@ -31,9 +31,16 @@ class Wine < ActiveRecord::Base
     self.avg_rating = reviews.average(:rating).to_f
   end
 
-  def update_avg_rating
+  # only called when a review is first created
+  def update_wine
+  # updates wine's average rating
     self.avg_rating = reviews.average(:rating).to_f
     self.save
+  # adds wine to current user's "Tasted" cellar
+    # Cellaring.create(
+    #   wine_id: self.id,
+    #   cellar_id: current_user.cellars.where(name: "Tasted")
+    # )
   end
 
 end

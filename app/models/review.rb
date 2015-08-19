@@ -18,10 +18,10 @@ class Review < ActiveRecord::Base
   belongs_to :wine, class_name: "Wine"
   belongs_to :user, class_name: "User"
 
-  after_save :update_wine_avg_rating
+  after_create :update_wine
 
-  def update_wine_avg_rating
-    wine.update_avg_rating
+  def update_wine
+    wine.update_wine
   end
 
 end

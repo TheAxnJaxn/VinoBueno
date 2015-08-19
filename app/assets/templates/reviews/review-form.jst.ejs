@@ -8,11 +8,11 @@
 
   <p>
     <ul class="list-unstyled"><li class="rating">
-      <a href="#" title="5" class="star-click">&#x2605;</a>
-      <a href="#" title="4" class="star-click">&#x2605;</a>
-      <a href="#" title="3" class="star-click">&#x2605;</a>
-      <a href="#" title="2" class="star-click">&#x2605;</a>
-      <a href="#" title="1" class="star-click">&#x2605;</a>
+      <a href="#" title="5" class="star-click <%= (review.get('rating') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+      <a href="#" title="4" class="star-click <%= (review.get('rating') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+      <a href="#" title="3" class="star-click <%= (review.get('rating') >= 3) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+      <a href="#" title="2" class="star-click <%= (review.get('rating') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+      <a href="#" title="1" class="star-click <%= (review.get('rating') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</a>
       <input type="hidden" name="review[review][rating]" value="<%= review.escape('rating') %>">
     </li></ul>
   </p>

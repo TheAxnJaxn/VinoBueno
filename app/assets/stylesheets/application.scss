@@ -152,6 +152,10 @@ button.btn-new-review {
   width: auto;
 }
 
+td, th {
+  padding: 10px;
+}
+
  // modals styling
 
  .m-background {
@@ -242,10 +246,10 @@ li.small-grey {
 }
 
 // star styling
-span.star-off {
+.star-off {
   color: #555;
 }
-span.star-on {
+.star-on {
   color: #C10100;
 }
 
