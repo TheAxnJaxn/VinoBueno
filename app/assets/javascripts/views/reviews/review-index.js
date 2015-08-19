@@ -25,7 +25,11 @@ VinoBueno.Views.ReviewsIndex = Backbone.CompositeView.extend({
     this.collection.each(function(review) {
       if (VinoBueno.CURRENT_USER.id == review.attributes.user_id) {
         this.addMyReview(review);
-        this.$el.find('.btn-new-review').replaceWith('<button class="btn-edit-review">Edit Review</button>');
+        var $button = $("<button></button>")
+                      .addClass('btn-edit-review')
+                      .html('Edit Review')
+                      .data('review-id', review.id);
+        $('.btn-new-review').replaceWith($button);
       }
     }.bind(this))
   },

@@ -27,6 +27,11 @@ class Api::ReviewsController < ApplicationController
   def update
   end
 
+  def show
+    @review = Review.find(params[:id])
+    render json: @review
+  end
+
   private
 
   def review_params

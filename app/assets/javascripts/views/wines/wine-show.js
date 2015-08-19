@@ -11,7 +11,8 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click .btn-new-review': 'reviewForm'
+    'click .btn-new-review': 'reviewForm',
+    'click .btn-edit-review': 'reviewForm'
   },
 
   render: function () {
@@ -30,7 +31,8 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
   },
 
   reviewForm: function (event) {
-    var review = new VinoBueno.Models.Review();
+    var id = $(event.currentTarget).data('reviewId');
+    var review = this.collection.getOrFetch(id);
 
     var modal = new VinoBueno.Views.ReviewForm({
       model: review,
