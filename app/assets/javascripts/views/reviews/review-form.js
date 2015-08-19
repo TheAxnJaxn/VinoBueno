@@ -42,9 +42,11 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
   },
 
   setRating: function (event) {
+    var currentReview = this.$('textarea').val();
     event.preventDefault();
     this.model.set('rating', event.currentTarget.title)
     this.render();
+    this.$('textarea').val(currentReview);
   },
 
   enterContent: function (event) {
