@@ -47,8 +47,10 @@ class User < ActiveRecord::Base
   end
 
   def create_default_cellars
-    Cellar.create(name: "Want to Taste", user_id: self.id)
-    Cellar.create(name: "Tasted", user_id: self.id)
+    Cellar.create([
+      {name: "Want to Taste", user_id: self.id},
+      {name: "Tasted", user_id: self.id}
+      ])
   end
 
   private
