@@ -17,6 +17,7 @@ session_token   | string    | not null, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+avg_rev     | float     | not null
 name        | string    | not null
 maker       | string    | not null
 wine_type   | string    | not null

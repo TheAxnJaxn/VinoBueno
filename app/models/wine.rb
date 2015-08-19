@@ -22,7 +22,10 @@ class Wine < ActiveRecord::Base
 
   has_one :image, as: :imageable
 
-  has_many :reviews, class_name: "Review"
+  has_many :reviews
+
+  has_many :cellarings
+  has_many :cellars, through: :cellarings
 
   def ensure_avg_rating
     self.avg_rating = reviews.average(:rating).to_f

@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :images, as: :imageable
-
-  has_many :reviews, class_name: "Review"
+  has_many :reviews
+  has_many :cellars
 
   def password=(password)
     @password = password
