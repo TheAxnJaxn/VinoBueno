@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :cellars
 
+  after_save :create_default_cellars
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -42,6 +44,11 @@ class User < ActiveRecord::Base
     user = User.find_by(email: email)
     return nil unless user && user.is_password?(password)
     user
+  end
+
+  def create_default_cellars
+    Cellar.create(name: "Want to Taste", user_id: self.id)
+    Cellar.create(name: "Tasted", user_id: self.id)
   end
 
   private
