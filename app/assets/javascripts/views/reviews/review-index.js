@@ -4,7 +4,7 @@ VinoBueno.Views.ReviewsIndex = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.model = options.wine;
-    this.listenTo(this.model.reviews(), 'sync', this.render);
+    this.listenTo(this.collection, 'sync', this.render);
   },
 
   template: JST['reviews/review-index'],
