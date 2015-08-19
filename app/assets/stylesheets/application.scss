@@ -187,6 +187,17 @@ td, th {
   display: inline-block;
 }
 
+.m-content form {
+  display: table;
+}
+.m-content form p {
+  display: table-row;
+}
+.m-content form p label {
+  display: table-cell;
+  vertical-align: top;
+}
+
 input.btn.btn-primary {
     background-color: #9B0100;
     border: 1px solid #9B0100;

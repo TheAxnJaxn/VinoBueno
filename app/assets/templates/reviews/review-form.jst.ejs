@@ -1,31 +1,30 @@
 <div class="m-background">
-
   <div class="m-content-middle">
-
     <div class="m-content">
 
     <button class="close">&times;</button>
-    <h3><%= review.isNew() ? 'New Review' : 'Edit Review' %></h3>
+    <h3><%= review.isNew() ? 'New Rating' : 'Edit Rating' %></h3>
     <form>
       <input type="hidden" name="review[review][wine_id]" value="<%= wine.id %>">
 
-    <p>
-      <ul class="list-unstyled"><li class="rating">
-        <a href="#" title="5" class="star-click <%= (review.get('rating') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</a>
-        <a href="#" title="4" class="star-click <%= (review.get('rating') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</a>
-        <a href="#" title="3" class="star-click <%= (review.get('rating') >= 3) ? 'star-on' : 'star-off' %>">&#x2605;</a>
-        <a href="#" title="2" class="star-click <%= (review.get('rating') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</a>
-        <a href="#" title="1" class="star-click <%= (review.get('rating') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</a>
-        <input type="hidden" name="review[review][rating]" value="<%= review.escape('rating') %>">
-      </li></ul>
-    </p>
+      <p>
+        <ul class="list-unstyled"><li class="rating">
+          <a href="#" title="5" class="star-click <%= (review.get('rating') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+          <a href="#" title="4" class="star-click <%= (review.get('rating') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+          <a href="#" title="3" class="star-click <%= (review.get('rating') >= 3) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+          <a href="#" title="2" class="star-click <%= (review.get('rating') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+          <a href="#" title="1" class="star-click <%= (review.get('rating') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</a>
+          <input type="hidden" name="review[review][rating]" value="<%= review.escape('rating') %>">
+        </li></ul>
+      </p>
 
       <p>
-        <textarea name="review[review][review]" rows="10" cols="50" placeholder="Review"></textarea>
+        <textarea name="review[review][review]" rows="10" cols="50" placeholder="Review (Not required to add rating)"></textarea>
       </p>
 
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
+
     </div>
   </div>
 </div>
