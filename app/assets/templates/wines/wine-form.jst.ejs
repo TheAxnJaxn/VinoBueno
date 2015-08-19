@@ -1,59 +1,61 @@
-<div class="m-background"></div>
+<div class="m-background">
+  <div class="m-content-middle">
+    <div class="m-content">
+      <button class="close">&times;</button>
+      <h3>New Wine</h3>
+      <form>
 
-<div class="m-content">
-  <button class="close">&times;</button>
-  <h3>New Wine</h3>
-  <form>
+        <p>
+          <label for="wine_name">*Name:</label>
+          <input class="text-field" type="text" name="wine[wine][name]" placeholder="Name">
+        </p>
 
-    <p>
-      <label for="wine_name">*Name:</label>
-      <input class="text-field" type="text" name="wine[wine][name]" placeholder="Name">
-    </p>
+        <p>
+          <label for="wine_maker">*Producer:</label>
+          <input class="text-field" type="text" name="wine[wine][maker]" placeholder="Maker">
+        </p>
 
-    <p>
-      <label for="wine_maker">*Producer:</label>
-      <input class="text-field" type="text" name="wine[wine][maker]" placeholder="Maker">
-    </p>
+        <p>
+          <label for="wine_type">*Type:</label>
+          <select name="wine[wine][wine_type]">
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+            <option value="Rose">Ros&eacute;</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Champagne/Sparkling">Champagne/Sparkling</option>
+            <option value="Mead">Mead/Honey Wine</option>
+          </select>
+        </p>
 
-    <p>
-      <label for="wine_type">*Type:</label>
-      <select name="wine[wine][wine_type]">
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Rose">Ros&eacute;</option>
-        <option value="Dessert">Dessert</option>
-        <option value="Champagne/Sparkling">Champagne/Sparkling</option>
-        <option value="Mead">Mead/Honey Wine</option>
-      </select>
-    </p>
+        <p>
+          <label for="wine_varietal">*Varietal:</label>
+          <input class="text-field" type="text" name="wine[wine][varietal]" placeholder="Blend/Merlot/Chardonnay">
+        </p>
 
-    <p>
-      <label for="wine_varietal">*Varietal:</label>
-      <input class="text-field" type="text" name="wine[wine][varietal]" placeholder="Blend/Merlot/Chardonnay">
-    </p>
+        <p>
+          <label for="wine_description">*Description:</label>
+          <textarea name="wine[wine][description]" rows="8" cols="40" placeholder="Description"></textarea>
+        </p>
 
-    <p>
-      <label for="wine_description">*Description:</label>
-      <textarea name="wine[wine][description]" rows="8" cols="40" placeholder="Description"></textarea>
-    </p>
+        <p>
+          <label for="wine_image">Upload Image:</label>
+          <span class="form-wine-image">
+            <button id="upload-widget-opener">Upload Image</button>
+          </span>
+        </p>
 
-    <p>
-      <label for="wine_image">Upload Image:</label>
-      <span class="form-wine-image">
-        <button id="upload-widget-opener">Upload Image</button>
-      </span>
-    </p>
-    
-    <p>
-      <label for="wine_grown">Region:</label>
-      <input class="text-field" type="text" name="wine[wine][grown]" placeholder="Location Grown">
-    </p>
+        <p>
+          <label for="wine_grown">Region:</label>
+          <input class="text-field" type="text" name="wine[wine][grown]" placeholder="Location Grown">
+        </p>
 
-    <p>
-      <label for="wine_vintage">Vintage:</label>
-      <input class="text-field" type="text" name="wine[wine][vintage]" placeholder="Vintage">
-    </p>
+        <p>
+          <label for="wine_vintage">Vintage:</label>
+          <input class="text-field" type="text" name="wine[wine][vintage]" placeholder="Vintage">
+        </p>
 
-    <input type="submit" class="btn btn-primary" value="Add Wine">
-  </form>
+        <input type="submit" class="btn btn-primary" value="Add Wine">
+      </form>
+    </div>
+  </div>
 </div>
