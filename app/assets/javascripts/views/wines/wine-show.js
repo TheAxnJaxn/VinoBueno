@@ -21,7 +21,8 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     var view = new VinoBueno.Views.ReviewsIndex({
-      wine: this.model
+      wine: this.model,
+      collection: this.collection
     });
     this.addSubview('.review-subview', view)
 

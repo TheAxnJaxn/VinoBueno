@@ -143,10 +143,10 @@ div.login-table {
 }
 
 .review-header {
-  border-top: 1px solid #9B0100;
+  border-top: 1px solid #555;
 }
 
-button.btn-new-review {
+button.btn-new-review, button.btn-edit-review {
   display: inline-block;
   float: right;
   width: auto;

@@ -19,7 +19,7 @@
       </p>
 
       <p>
-        <textarea name="review[review][review]" rows="10" cols="50" placeholder="Review (Not required to add rating)"></textarea>
+        <textarea name="review[review][review]" rows="10" cols="50" placeholder="Review (Not required to add rating)"><%= review.escape('review') %></textarea>
       </p>
 
       <input type="submit" class="btn btn-primary" value="Submit">
