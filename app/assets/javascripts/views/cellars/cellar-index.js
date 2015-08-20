@@ -23,11 +23,6 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
     return this;
   },
 
-  initialize: function () {
-    // subviews will listen for syncs
-    // this.listenTo(this.collection, 'sync', this.render);
-  },
-
   events: {
 
   },

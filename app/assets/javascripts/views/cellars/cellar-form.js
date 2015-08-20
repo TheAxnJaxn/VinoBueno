@@ -20,7 +20,7 @@ VinoBueno.Views.CellarForm = Backbone.View.extend({
 
   swapOutForm: function (event) {
     $a = $('<a href="#"></a>')
-            .addClass('new-celar')
+            .addClass('new-cellar')
             .html('add cellar');
     $(event.delegateTarget).replaceWith($a);
   },

@@ -8,10 +8,10 @@ class Api::CellarsController < ApplicationController
   end
 
   def show
-    @cellar = Cellar.find(params[:id]).includes(:wines)
+    @cellar = Cellar.where(id: params[:id]).includes(:wines)[0]
     render json: @cellar
   end
-
+  
   def create
     @cellar = Cellar.new(cellar_params)
     @cellar.user_id = current_user.id
