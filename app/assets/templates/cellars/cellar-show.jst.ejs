@@ -1,4 +1,5 @@
-<div class="cellar-show-subview">
-  <h3 class="border-under"><%= cellar.escape('name') %></h3>
+<h3 class="border-under"><%= cellar.escape('name') %></h3>
 
-</div>
+<% cellar.wines().each( function(wine) { %>
+  <%= wine.escape('name') %>
+<%  }) %>

@@ -2,6 +2,8 @@ VinoBueno.Collections.Reviews = Backbone.Collection.extend({
 
   url: 'api/reviews',
 
+  model: VinoBueno.Models.Review,
+
   getOrFetch: function (id) {
     var review = this.get(id);
 
