@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :cellars
 
-  after_save :create_default_cellars
+  after_create :create_default_cellars
 
   def password=(password)
     @password = password
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
     Cellar.create([
       {name: "Want to Taste", user_id: self.id},
       {name: "Tasted", user_id: self.id}
-      ])
+    ])
   end
 
   private

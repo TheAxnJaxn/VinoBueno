@@ -4,10 +4,11 @@ class Api::CellarsController < ApplicationController
 
   def index
     @cellars = Cellar.where(user_id: current_user.id)
-    render :index
+    render json: @cellars
   end
 
   def show
     @cellar = Cellar.find(params[:id]).includes(:wines)
+    render json: @cellar
   end
 end

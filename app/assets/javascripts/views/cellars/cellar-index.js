@@ -5,7 +5,9 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
   className: 'cellar-index-composite',
 
   render: function () {
-    
+    var content = this.template({
+      
+    })
   },
 
   initialize: function () {
