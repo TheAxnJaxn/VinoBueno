@@ -7,7 +7,8 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
   className: 'cellar-index-composite',
 
   events: {
-    'click a.new-cellar': 'cellarForm'
+    'click a.new-cellar': 'cellarForm',
+    'click a.show-cellar': 'showCellar'
   },
 
   initialize: function () {
@@ -19,13 +20,24 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
       cellars: this.collection
     });
     this.$el.html(content);
-
-    // var wineSub = new ...({
-    //   ...
-    // });
-    // this.addSubview('.wines-in-cellar', wineSub);
+    this.attachSubviews();
 
     return this;
+  },
+
+  showCellar: function (event) {
+    event.preventDefault();
+    var cellarID = $(event.currentTarget).data('cellar-id');
+    var cellar = this.collection.getOrFetch(cellarID);
+    this.removeCellarView();
+    this._cellarView = new VinoBueno.Views.CellarShow({
+     model: cellar
+    });
+    this.addSubview('.wines-in-cellar', this._cellarView.bind(this));
+  },
+
+  removeCellarView: function (){
+    this._cellarView && this.removeSubview('.wines-in-cellar', this._cellarView.bind(this))
   },
 
   // replaces 'add a cellar' link with cellar form
@@ -38,13 +50,6 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
     });
 
     $(event.currentTarget).replaceWith(addView.render().$el);
-  },
-
-  _swapView: function (view) {
-    this._view && this._view.remove();
-    this._view = view;
-    $('.wines-in-cellar').html(view.$el);
-    view.render();
   }
 
 });

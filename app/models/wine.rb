@@ -27,6 +27,9 @@ class Wine < ActiveRecord::Base
   has_many :cellarings
   has_many :cellars, through: :cellarings
 
+  # only one user per review
+  has_many :users, through: :reviews
+
   def ensure_avg_rating
     self.avg_rating = reviews.average(:rating).to_f
   end

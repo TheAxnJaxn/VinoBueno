@@ -14,8 +14,10 @@ class Cellar < ActiveRecord::Base
   validates :name, :user_id, presence: true
 
   belongs_to :user
-  
+
   has_many :cellarings
   has_many :wines, through: :cellarings
+
+  has_many :images, through: :wines
 
 end

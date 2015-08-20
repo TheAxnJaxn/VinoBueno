@@ -8,7 +8,9 @@ class Api::WinesController < ApplicationController
   end
 
   def show
-    @wine = Wine.where(id: params[:id]).includes(:reviews)[0]
+    @wine = Wine.where(id: params[:id])
+                .includes(:reviews)
+                .includes(:users)[0]
     render :show
   end
 
