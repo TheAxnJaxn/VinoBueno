@@ -14,7 +14,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   cellarIndex: function () {
     var cellars = new VinoBueno.Collections.Cellars();
     cellars.fetch();
-    var view = new VinoBueno.Views.CellarsList({
+    var view = new VinoBueno.Views.CellarIndex({
       collection: cellars
     });
     this._swapView(view);

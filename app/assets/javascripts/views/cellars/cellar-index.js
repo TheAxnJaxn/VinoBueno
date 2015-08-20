@@ -6,31 +6,44 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
 
   className: 'cellar-index-composite',
 
+  events: {
+    'click a.new-cellar': 'cellarForm'
+  },
+
+  initialize: function () {
+    this.listenTo(this.collection, 'sync', this.render);
+  },
+
   render: function () {
-    var content = this.template();
+    var content = this.template({
+      cellars: this.collection
+    });
     this.$el.html(content);
 
-    var cellarSub = new VinoBueno.Views.CellarsList({
-      collection: this.collection
-    });
-    this.addSubview('.cellar-list', cellarSub);
-
-    // var wineSub = new VinoBueno.Views.WinesIndex({
-    //   collection: wines
+    // var wineSub = new ...({
+    //   ...
     // });
     // this.addSubview('.wines-in-cellar', wineSub);
 
     return this;
   },
 
-  events: {
+  // replaces 'add a cellar' link with cellar form
+  cellarForm: function (event) {
+    event.preventDefault();
+    var cellar = new VinoBueno.Models.Cellar();
+    var addView = new VinoBueno.Views.CellarForm({
+      model: cellar,
+      collection: this.collection
+    });
 
+    $(event.currentTarget).replaceWith(addView.render().$el);
   },
 
   _swapView: function (view) {
     this._view && this._view.remove();
     this._view = view;
-    this.$rootEl.html(view.$el);
+    $('.wines-in-cellar').html(view.$el);
     view.render();
   }
 

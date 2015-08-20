@@ -1,2 +1,15 @@
-<div class="cellar-list"></div>
+<div class="cellar-list">
+  <div class="cellar-list-subview">
+    <h3 class="border-under">My Cellars</h3>
+
+    <ul class="list-unstyled">
+      <% cellars.each(function (cellar) { %>
+        <li><a href="#" data-cellar-id="<%= cellar.id %>" class="show-cellar"><%= cellar.escape('name') %></a></li>
+      <% }); %>
+      <br />
+      <li><a href="#" class="new-cellar">add cellar</a></li>
+    </ul>
+  </div>
+</div>
+
 <div class="wines-in-cellar"></div>
