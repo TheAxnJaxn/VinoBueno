@@ -1,0 +1,7 @@
+<h3 class="border-under">My Cellars</h3>
+
+<ul class="list-unstyled">
+  <% cellars.each(function (cellar) { %>
+    <li><%= cellar.escape('name') %></li>
+  <% }); %>
+</ul>

@@ -1,3 +1,23 @@
 // Place all the styles related to the api/cellars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cellar-index-composite {
+  display: table;
+  width: 80%;
+  margin: auto;
+}
+
+.cellar-list {
+  display: table-cell;
+  width: 25%;
+}
+
+.wines-in-cellar {
+  display: table-cell;
+  width: 75%;
+}
+
+h3.border-under {
+  border-bottom: 1px solid #555;
+}
