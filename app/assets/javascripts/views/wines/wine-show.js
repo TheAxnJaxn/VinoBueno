@@ -25,14 +25,14 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
       wine: this.model,
       collection: this.collection
     });
-    this.addSubview('.review-subview', view)
+    this.addSubview('.review-subview', view);
 
     return this;
   },
 
   reviewForm: function (event) {
     var id = $(event.currentTarget).data('reviewId');
-    
+
     if (id) {
       var review = this.collection.get(id);
     } else {
