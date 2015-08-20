@@ -24,15 +24,16 @@ VinoBueno.Views.CellarsList = Backbone.View.extend({
   },
 
   cellar: function (event) {
-debugger
+alert('Not yet written');
   },
 
+  // replaces 'add a cellar' link with cellar form
   cellarForm: function (event) {
-debugger
     event.preventDefault();
     var cellar = new VinoBueno.Models.Cellar();
     var addView = new VinoBueno.Views.CellarForm({
-      model: cellar
+      model: cellar,
+      collection: this.collection
     });
 
     $(event.currentTarget).replaceWith(addView.render().$el);
