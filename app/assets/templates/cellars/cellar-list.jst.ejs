@@ -2,6 +2,8 @@
 
 <ul class="list-unstyled">
   <% cellars.each(function (cellar) { %>
-    <li><%= cellar.escape('name') %></li>
+    <li><a href="#" data-cellar-id="<%= cellar.id %>" class="show-cellar"><%= cellar.escape('name') %></a></li>
   <% }); %>
+  <br />
+  <li><a href="#" class="new-cellar">add cellar</a></li>
 </ul>

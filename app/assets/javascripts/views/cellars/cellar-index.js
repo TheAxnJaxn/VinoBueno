@@ -30,6 +30,13 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
 
   events: {
 
+  },
+
+  _swapView: function (view) {
+    this._view && this._view.remove();
+    this._view = view;
+    this.$rootEl.html(view.$el);
+    view.render();
   }
 
 });
