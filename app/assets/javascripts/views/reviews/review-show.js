@@ -21,10 +21,10 @@ VinoBueno.Views.ReviewShow = Backbone.View.extend({
   // strips @... from user email to protect privacy
   prepUserName: function () {
     var idx = this.model.get('user_email').indexOf('@');
-    if (idx !== -1) {
-      var username = this.model.get('user_email').substring(0, idx);
-    } else {
+    if (idx === -1) {
       var username = this.model.get('user_email')
+    } else {
+      var username = this.model.get('user_email').substring(0, idx);
     }
     this.model.set('username', username);
   }
