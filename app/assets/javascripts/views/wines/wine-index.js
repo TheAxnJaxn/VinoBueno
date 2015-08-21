@@ -11,9 +11,7 @@ VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
     var content = this.template({
       wines: this.collection
     });
-
     this.$el.html(content);
-
     return this;
   },
 

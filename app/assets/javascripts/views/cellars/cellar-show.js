@@ -1,4 +1,4 @@
-VinoBueno.Views.CellarShow = Backbone.View.extend({
+VinoBueno.Views.CellarShow = Backbone.CompositeView.extend({
 
   // this.model -> 1 cellar w/wines
 
@@ -8,7 +8,10 @@ VinoBueno.Views.CellarShow = Backbone.View.extend({
 
   initialize: function () {
     this.wines = this.model.wines();
+    this.listenTo(this.model, 'sync', this.render);
   },
+
+  events: {},
 
   render: function () {
     var content = this.template({
@@ -24,7 +27,10 @@ VinoBueno.Views.CellarShow = Backbone.View.extend({
   },
 
   addWine: function (wine) {
-
+    var view = new VinoBueno.Views.CellarWine({
+      model: wine
+    });
+    this.addSubview('.cellar-wine-index', view);
   }
 
 });

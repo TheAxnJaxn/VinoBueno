@@ -5,7 +5,6 @@ VinoBueno.Collections.Cellars = Backbone.Collection.extend({
 
   getOrFetch: function (id) {
     var cellar = this.get(id);
-      debugger;
 
     if (cellar) {
       cellar.fetch();
