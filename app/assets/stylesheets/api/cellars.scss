@@ -25,3 +25,24 @@ h3.border-under {
 .space-under {
   margin-bottom: 5px;
 }
+
+.wine-in-cellar a:hover + div {
+  opacity: 1;
+  width: 300px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.wine-in-cellar a + div {
+  opacity: 0;
+  transition: opacity 1s;
+  width: 300px;
+  padding: 5px;
+}
+
+.wine-in-cellar {
+  width: 150px;
+  float: left;
+  margin: 5px;
+}

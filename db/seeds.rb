@@ -8,7 +8,7 @@ user3 = User.create(email: 'cersei@lannister.rock', password: 'winelover')
 ##### Wines #####
 wine1 = Wine.create(name: "Cupcake Vineyards Merlot",
             maker: "Cupcake Vineyards",
-            wine_type: "red",
+            wine_type: "Red",
             varietal: "Merlot",
             description: "Sourced from vineyards on California’s Central Coast, our Merlot is big and bold. Full-bodied yet smooth, the wine shows flavors of red cherries that evolve into decadent levels of cocoa, spice and espresso as well as a smooth finish. Moderated by the Pacific Ocean, the unique topography and climate of the sun-drenched Central Coast produces world-class wines. Our Merlot grapes are cool fermented for a slow process that retains aroma and complexity. A regimen of pump-overs extracts soft tannins and color, and grape skins are pressed before reaching dryness to preserve a lush tannin structure. Aging in American oak barrels adds more richness and complexity.",
             grown: "Central Coast, California")

@@ -1,1 +1,24 @@
-<img src="<%= wine.escape('img_url_thumb') %>" alt="<%= wine.escape('name') %>" />
+<a href="#/wines/<%= wine.escape('id') %>">
+  <img src="<%= wine.escape('img_url_thumb') %>" alt="<%= wine.escape('name') %>" />
+</a>
+
+<div class="wine-detail-on-hover">
+  <ul class="list-unstyled">
+    <li><h4><%= wine.escape('name') %></h4></li>
+    <li><b>By:</b> <%= wine.escape('maker') %></li>
+
+    <li class="rating">
+      <span title="1" class="<%= (wine.get('avg_rev') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+      <span title="2" class="<%= (wine.get('avg_rev') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+      <span title="3" class="<%= (wine.get('avg_rev') >= 3) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+      <span title="4" class="<%= (wine.get('avg_rev') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+      <span title="5" class="<%= (wine.get('avg_rev') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</span>
+    </li>
+
+    <li class="small-grey"> - <%= wine.escape('avg_rev') %> average rating - </li>
+
+    <li><b>Type:</b> <%= wine.escape('wine_type') %></li>
+    <li><b>Varietal:</b> <%= wine.escape('varietal') %></li>
+    <li><b>Description:</b> <%= wine.escape('description') %></li>
+  </ul>
+</div>

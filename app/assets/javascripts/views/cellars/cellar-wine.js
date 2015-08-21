@@ -4,7 +4,7 @@ VinoBueno.Views.CellarWine = Backbone.View.extend({
 
   template: JST['cellars/cellar-wine'],
 
-  className: 'wine-cellar-image',
+  className: 'wine-in-cellar',
 
   render: function () {
     var content = this.template({
