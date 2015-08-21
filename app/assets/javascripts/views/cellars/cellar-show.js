@@ -9,10 +9,8 @@ VinoBueno.Views.CellarShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.wines = this.model.wines();
     this.listenTo(this.model, 'sync', this.render);
-  },
-
-  events: {
-    // event for mousing over and mousing off a wine in the cellar
+    this.listenTo(this.model.wines(), 'add', this.addWine);
+    this.renderWines();
   },
 
   render: function () {
@@ -20,7 +18,6 @@ VinoBueno.Views.CellarShow = Backbone.CompositeView.extend({
       cellar: this.model
     })
     this.$el.html(content);
-    this.renderWines();
     return this;
   },
 

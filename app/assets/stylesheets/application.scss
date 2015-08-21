@@ -23,16 +23,20 @@
  // #E80100
  // #C10100
 
-// all images
+// all images get box-shadow
 img {
   box-shadow: 0 3px 8px rgba(50, 50, 50, 1);
+}
+
+// except images in the nav or sign in/up
+.navbar img, #sign-in-up img {
+  box-shadow: none;
 }
 
 // navbar logo
 .navbar img {
   height: 300%;
   margin-top: -20px;
-  box-shadow: none;
 }
 
 // navbar link hover

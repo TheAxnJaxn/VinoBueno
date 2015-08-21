@@ -2,6 +2,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options) {
     this.$rootEl = $('#main');
+    VinoBueno.Collections.cellars.fetch();
   },
 
   routes: {
@@ -12,10 +13,10 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   cellarIndex: function () {
-    var cellars = VinoBueno.Collections.cellars;
-    cellars.fetch();
+    // var cellars = VinoBueno.Collections.cellars;
+    // cellars.fetch();
     var view = new VinoBueno.Views.CellarIndex({
-      collection: cellars
+      collection: VinoBueno.Collections.cellars
     });
     this._swapView(view);
   },
