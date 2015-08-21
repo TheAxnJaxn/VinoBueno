@@ -27,6 +27,9 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
     });
     this.addSubview('.review-subview', view);
 
+    var button = new VinoBueno.Views.CellarButton();
+    this.addSubview('.button-here', button);
+
     return this;
   },
 

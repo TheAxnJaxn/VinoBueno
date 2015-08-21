@@ -1,10 +1,10 @@
-Namespace.Views.Viewname = Backbone.View.extend ({
+VinoBueno.Views.CellarButton = Backbone.View.extend ({
 
-  template: JST[ // template loc ],
+  template: JST['cellars/cellar-button'],
 
   render: function () {
     var content = this.template({
-      // pass in ...
+      // pass in current user's cellar...
       });
     this.$el.html(content);
     return this;

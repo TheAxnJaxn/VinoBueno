@@ -21,3 +21,5 @@ VinoBueno.Collections.Cellars = Backbone.Collection.extend({
   }
 
 });
+
+VinoBueno.Collections.cellars = new VinoBueno.Collections.Cellars();

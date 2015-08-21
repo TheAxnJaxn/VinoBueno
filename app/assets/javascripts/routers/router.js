@@ -12,7 +12,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   cellarIndex: function () {
-    var cellars = new VinoBueno.Collections.Cellars();
+    var cellars = VinoBueno.Collections.cellars;
     cellars.fetch();
     var view = new VinoBueno.Views.CellarIndex({
       collection: cellars
@@ -21,7 +21,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
-    var wines = new VinoBueno.Collections.Wines();
+    var wines = VinoBueno.Collections.wines;
     wines.fetch();
     var view = new VinoBueno.Views.WinesIndex({
       collection: wines
@@ -39,7 +39,7 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   searchWineIndex: function (queryString) {
-    var searchedCollection = new VinoBueno.Collections.Wines();
+    var searchedCollection = VinoBueno.Collections.wines;
     searchedCollection.url = 'api/wines/search?' + queryString;
     searchedCollection.fetch({
       // data: {search: queryString }
