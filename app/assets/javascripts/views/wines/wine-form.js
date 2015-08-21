@@ -82,8 +82,7 @@ VinoBueno.Views.WineForm = Backbone.View.extend({
         });
 
         $('#upload-widget-opener').remove()
-        $('.form-wine-image').text('Image Uploaded')
-                            .append('<img src="' + thumb + '" />')
+        $('.form-wine-image').append('<img src="' + thumb + '" />')
       } else {
         // add flash error
       }
