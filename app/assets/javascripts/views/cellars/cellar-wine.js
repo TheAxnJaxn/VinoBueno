@@ -19,7 +19,10 @@ VinoBueno.Views.CellarWine = Backbone.View.extend({
   },
 
   setMiniDescription: function () {
-    var mini = this.model.get('description').substring(0, 101).concat('...');
+    var mini = this.model
+                    .get('description')
+                    .substring(0, 101)
+                    .concat('...');
     this.model.set('mini-descr', mini);
   }
 
