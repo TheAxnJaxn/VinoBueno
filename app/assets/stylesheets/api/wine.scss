@@ -10,3 +10,16 @@
 .wine-mini-deets ul {
   list-style-type: none;
 }
+
+button.btn.btn-danger {
+  margin-right: 0px;
+  background-color: #9B0100;
+  border: 1px solid #9B0100;
+}
+
+button.btn.btn-danger:hover {
+  margin-right: 0px;
+  background-color: #9B0100;
+  background-color: #C10100;
+  box-shadow: none;
+}

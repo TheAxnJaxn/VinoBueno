@@ -4,8 +4,22 @@
 
       <td class="wine-img">
         <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
-        <button type="button" name="button">Add to Cellar</button><br/> - Cellar Phase
 
+        <!-- Split button -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger">Add to Cellar</button>
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </div>
+
+        <br/>
       </td>
 
       <td class="wine-mini-deets">
