@@ -27,7 +27,9 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
     });
     this.addSubview('.review-subview', view);
 
-    var button = new VinoBueno.Views.CellarButton();
+    var button = new VinoBueno.Views.CellarButton({
+      wine: this.model
+    });
     this.addSubview('.button-here', button);
 
     return this;

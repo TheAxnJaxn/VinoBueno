@@ -13,11 +13,20 @@ VinoBueno.Views.WinesIndex = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
 
-    var button = new VinoBueno.Views.CellarButton();
-    button.render();
-    this.addSubview('.button-here', button);
+    this.renderWineRows();
 
     return this;
+  },
+
+  renderWineRows: function () {
+    this.collection.each(this.addWine.bind(this));
+  },
+
+  addWine: function (wine) {
+    var view = new VinoBueno.Views.WineIndexItem({
+      model: wine
+    });
+    this.addSubview('.wine-index-items', view);
   },
 
   initialize: function () {

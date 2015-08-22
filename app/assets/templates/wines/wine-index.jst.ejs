@@ -1,41 +1,4 @@
 <button class="btn-new-wine">Add New Wine</button>
 <h3>Wines:</h3>
 
-<% wines.each(function (wine) { %>
-  <div class="wine-mini row" data-wine-id="<%= wine.id %>">
-
-    <div class="wine-mini-img col-md-3 col-xs-6">
-      <a href="#/wines/<%= wine.id %>" data-wine-id="<%= wine.id %>" class="clickable">
-        <img src="<%= wine.escape('img_url_thumb') %>" alt="" />
-      </a>
-    </div>
-
-    <div class="wine-mini-deets col-md-5 col-xs-6">
-        <ul class="list-unstyled">
-          <li>
-            <h4>
-              <a href="#/wines/<%= wine.id %>" class="clickable" data-wine-id="<%= wine.id %>">
-                <%= wine.escape('name') %>
-              </a>
-            </h4>
-          </li>
-          <li class="rating smaller-rating">
-            <span title="1" class="<%= (wine.get('avg_rev') >= 5) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-            <span title="2" class="<%= (wine.get('avg_rev') >= 4) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-            <span title="3" class="<%= (wine.get('avg_rev') >= 3) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-            <span title="4" class="<%= (wine.get('avg_rev') >= 2) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-            <span title="5" class="<%= (wine.get('avg_rev') >= 1) ? 'star-on' : 'star-off' %>">&#x2605;</span>
-          </li>
-          <li class="small-grey"> - <%= wine.escape('avg_rev') %> average rating - </li>
-          <li>By: <%= wine.escape('maker') %></li>
-          <li>Type: <%= wine.escape('wine_type') %></li>
-          <li>Varietal: <%= wine.escape('varietal') %></li>
-        </ul>
-    </div>
-
-    <div class="wine-mini-actions col-md-4 col-xs-12" data-wine-id="<%= wine.id %>">
-      <div class="button-here"></div>
-    </div>
-
-  </div>
-<%  }); %>
+<div class="wine-index-items"></div>

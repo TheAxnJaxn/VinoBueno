@@ -6,13 +6,5 @@
     <span class="caret"></span>
     <span class="sr-only">Toggle Dropdown</span>
   </button>
-  <ul class="dropdown-menu">
-    <% cellars.each( function (cellar) { %>
-      <li>
-        <a href="#" data-cellar-id="<%= cellar.id %>">
-          <%= cellar.escape('name') %>
-        </a>
-      </li>
-    <% }); %>
-  </ul>
+  <ul class="dropdown-menu"></ul>
 </div>
