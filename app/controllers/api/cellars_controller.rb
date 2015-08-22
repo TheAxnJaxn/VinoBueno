@@ -4,7 +4,8 @@ class Api::CellarsController < ApplicationController
 
   def index
     @cellars = Cellar.where(user_id: current_user.id)
-    render json: @cellars
+                      .includes(:cellarings)
+    render :index
   end
 
   def show

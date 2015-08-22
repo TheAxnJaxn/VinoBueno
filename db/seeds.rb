@@ -97,3 +97,9 @@ Review.create(user_id: user3.id,
               wine_id: wine5.id,
               rating: 5,
               review: "More wine!")
+
+##### Cellarings ##### (All users will have 2 cellars by default)
+Cellaring.create(cellar_id: 1, wine_id: wine1.id)
+Cellaring.create(cellar_id: 1, wine_id: wine2.id)
+Cellaring.create(cellar_id: 2, wine_id: wine3.id)
+Cellaring.create(cellar_id: 2, wine_id: wine4.id)
