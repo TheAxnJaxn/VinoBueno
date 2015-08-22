@@ -17,7 +17,7 @@ Vino Bueno is a clone of Goodreads for wine reviews, built on Rails and Backbone
 - [X] Wine detail page shows reviews
 - [X] Create reviews with ratings
 - [ ] Add to shelves/cellars ('want to taste', 'tasted')
-- [ ] Create custom shelves/cellars
+- [X] Create custom shelves/cellars
 - [X] Search for wines
 - [ ] Friend other users
 - [ ] View a feed of friend's wine reviews
@@ -75,10 +75,10 @@ see after logging in.
 - [ ] User avatars & usernames
 - [ ] Comment on reviews
 - [X] Ability to add images
+- [ ] Rating details for wine show pages
 - [ ] Typeahead search bar
 - [ ] Recommendations on wines to try
 - [ ] Information on where to buy the wine
 - [ ] Like reviews
-- [ ] Rating details for wine show pages
 - [ ] Editable user profile
 - [ ] Get Cloudinary to work on https of VinoBueno

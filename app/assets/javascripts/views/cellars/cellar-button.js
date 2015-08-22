@@ -9,7 +9,7 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
 
   render: function () {
     var content = this.template({
-      // pass in current user's cellar...
+        cellars: this.collection
       });
     this.$el.html(content);
     return this;
