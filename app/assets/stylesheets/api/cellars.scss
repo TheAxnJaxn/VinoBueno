@@ -26,36 +26,26 @@ h3.border-under {
   margin-bottom: 5px;
 }
 
-// .wine-in-cellar a:hover + div {
-//
-//   opacity: 1;
-//   width: 300px;
-//   background-color: white;
-//   border-radius: 5px;
-//   padding: 5px;
-// }
-
-// .wine-in-cellar a + div {
-//   opacity: 0;
-//   transition: opacity 1s;
-//   width: 300px;
-//   padding: 5px;
-//   box-shadow: 0 3px 8px rgba(50, 50, 50, 1);
-// }
-
 .wine-in-cellar {
   width: 150px;
+  height: 150px;
   float: left;
   margin: 5px;
 
   .wine-detail-on-hover {
-    display: none;
+    margin-top: -999px;
+    // display: none;
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s;
     width: 300px;
     padding: 5px;
   }
 
   &:hover .wine-detail-on-hover {
-    display: block;
+    margin-top:0px;
+    height: auto;
+    opacity: 1;
     width: 300px;
     background-color: white;
     border-radius: 9px;

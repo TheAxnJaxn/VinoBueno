@@ -31,7 +31,7 @@ VinoBueno.Views.ReviewForm = Backbone.View.extend({
   createReview: function (event) {
     event.preventDefault();
     var formData = $(event.currentTarget).serializeJSON().review;
-    this.model.attributes.user = VinoBueno.CURRENT_USER;
+    this.model.attributes.user_email = VinoBueno.CURRENT_USER.email;
 
     this.model.save(formData, {
       success: function (review) {
