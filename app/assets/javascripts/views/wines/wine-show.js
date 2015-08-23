@@ -20,19 +20,24 @@ VinoBueno.Views.WineShow = Backbone.CompositeView.extend({
       wine: this.model
     });
     this.$el.html(content);
+    this.addReviews();
+    this.addButton();
+    return this;
+  },
 
+  addReviews: function () {
     var view = new VinoBueno.Views.ReviewsIndex({
       wine: this.model,
       collection: this.collection
     });
     this.addSubview('.review-subview', view);
+  },
 
+  addButton: function () {
     var button = new VinoBueno.Views.CellarButton({
       wine: this.model
     });
     this.addSubview('.button-here', button);
-
-    return this;
   },
 
   reviewForm: function (event) {
