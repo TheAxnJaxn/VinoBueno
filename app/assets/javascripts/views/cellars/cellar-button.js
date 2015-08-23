@@ -12,25 +12,27 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
 
   render: function () {
     var content = this.template();
-    this.addCellarOptions();
     this.$el.html(content);
+    this.addCellarOptions();
     return this;
   },
 
   addCellarOptions: function () {
-    this.collection.each(this.addCellarToButton);
+    this.collection.each(this.addCellarToButton.bind(this));
   },
 
   addCellarToButton: function (cellar) {
-    // cellar.get('wine_ids')
+    if ( cellar.get('wine_ids').indexOf(parseInt(this.wine.id)) > -1 ) {
+      // replace "Add to Cellar" with current cellar
+      this.$('.current-cellar').text(cellar.escape('name'))
+    } else {
+      // add all other cellars to dropdown li options
+      var $a = $('<a href="#"></a>')
+                .data('cellar-id', cellar.id)
+                .text(cellar.escape('name'));
+      var $el = $('<li></li>').append($a);
+      this.$('.dropdown-menu').append($el);
+    }
   }
 
 });
-
-// <% cellars.each( function (cellar) { %>
-//   <li>
-//     <a href="#" data-cellar-id="<%= cellar.id %>">
-//       <%= cellar.escape('name') %>
-//     </a>
-//   </li>
-// <% }); %>
