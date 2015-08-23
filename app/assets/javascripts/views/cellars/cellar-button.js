@@ -3,19 +3,21 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
   template: JST['cellars/cellar-button'],
 
   events: {
-    'click a.cellar-choice': 'updateCellaring'
+    'click a.cellar-choice': 'cellaringAction'
   },
 
   initialize: function (options) {
-    this.collection = VinoBueno.Collections.cellars;
-    this.listenTo(this.collection, 'sync', this.render);
     this.wine = options.wine;
+    this.collection = VinoBueno.Collections.cellars;
+    // this.listenTo(this.collection, 'sync', this.render);
+    // this.collection.on('change:[wine_ids]', this.render);
   },
 
   render: function () {
     var content = this.template();
     this.$el.html(content);
     this.addCellarOptions();
+
     return this;
   },
 
@@ -32,6 +34,7 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
               .attr('aria-hidden','true')
       this.$('.current-cellar').text(' ' + cellar.escape('name'))
               .prepend($glyph);
+      this._currentCellar = cellar;
     } else {
       // add all other cellars to dropdown li options
       var $a = $('<a href="#"></a>')
@@ -47,30 +50,55 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
     // adds removal option if wine is in a cellar
     if (this.$('.current-cellar').text() !== "Add to Cellar") {
       var $line = $('<li role="separator" class="divider"></li>')
-      var $el = $('<li><a href="#">Remove From Cellar</a></li>')
+      var $el = $('<li><a href="#" class="cellar-choice">Remove from Cellar</a></li>')
       this.$('.dropdown-menu').append($line).append($el);
     }
   },
 
-  updateCellaring: function (event) {
+  cellaringAction: function (event) {
     event.preventDefault();
-    var cellar_id = $(event.currentTarget).data('cellar-id');
-    var cellar = this.collection.getOrFetch(cellar_id);
 
     if (this.$('.current-cellar').text() === "Add to Cellar") {
-      var cellaring = new VinoBueno.Models.Cellaring();
-      cellaring.save({
-        cellar_id: cellar_id,
-        wine_id: this.wine.id
-      }, {
-        success: function () {
-          cellar.get('wine_ids').push(this.wine.id)
-        }.bind(this)
-      });
+      this.createCellaring(event);
+    } else if ($(event.currentTarget).text() === "Remove from Cellar") {
+      this.destroyCellaring(event);
     } else {
-
+      this.updateCellaring(event);
     }
-    debugger
+  },
+
+  createCellaring: function (event) {
+    var cellar_id = $(event.currentTarget).data('cellar-id');
+    var cellar = this.collection.get(cellar_id);
+
+    var cellaring = new VinoBueno.Models.Cellaring();
+    cellaring.save({
+      cellar_id: cellar_id,
+      wine_id: this.wine.id
+    }, {
+      success: function () {
+        cellar.get('wine_ids').push(this.wine.id);
+        this.render();
+      }.bind(this)
+    });
+  },
+
+  destroyCellaring: function (event) {
+    var cellaring = new VinoBueno.Models.Cellaring({
+      wine_id: this.wine.id,
+      cellar_id: this._currentCellar.id
+    });
+    cellaring.destroy({
+      success: function () {
+        var result = this._currentCellar.get('wine_ids')
+        .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1)
+        this._currentCellar.set('wine_ids', result);
+      }.bind(this)
+    });
+  },
+
+  updateCellaring: function (event) {
+
   }
 
 });
