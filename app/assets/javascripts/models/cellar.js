@@ -8,6 +8,11 @@ VinoBueno.Models.Cellar = Backbone.Model.extend({
       delete response.wines;
     }
 
+    if (response.cellarings) {
+      this.cellarings().set(response.cellarings, { parse: true });
+      delete response.cellarings;
+    }
+
     return response;
   },
 
@@ -17,6 +22,12 @@ VinoBueno.Models.Cellar = Backbone.Model.extend({
     }
 
     return this._wines;
+  },
+
+  cellarings: function () {
+    if (!this._cellarings) {
+      this._cellarings = new VinoBueno.Collections.Cellarings();
+    }
   }
 
 });

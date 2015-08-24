@@ -17,7 +17,6 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
     var content = this.template();
     this.$el.html(content);
     this.addCellarOptions();
-
     return this;
   },
 
@@ -88,17 +87,26 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
       wine_id: this.wine.id,
       cellar_id: this._currentCellar.id
     });
-    cellaring.destroy({
+
+    Backbone.sync("delete", cellaring, {
       success: function () {
-        var result = this._currentCellar.get('wine_ids')
-        .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1)
-        this._currentCellar.set('wine_ids', result);
+        this._currentCellar
+            .get('wine_ids')
+            .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1);
+        this.render();
       }.bind(this)
-    });
+    })
+    // cellaring.destroy({
+    //   success: function () {
+    //     this._currentCellar
+    //         .get('wine_ids')
+    //         .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1);
+    //     this.render();
+    //   }.bind(this)
+    // });
   },
 
   updateCellaring: function (event) {
-
   }
 
 });
