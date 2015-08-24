@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
+
     resources :wines do
       get 'search', on: :collection
     end
+    
     resources :images, only: [:create]
     resources :reviews, only: [:create, :update, :destroy, :index, :show]
     resources :cellars, only: [:index, :create, :show]

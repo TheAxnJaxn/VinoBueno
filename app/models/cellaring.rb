@@ -11,6 +11,8 @@
 
 class Cellaring < ActiveRecord::Base
 
+  validates :cellar_id, :wine_id, presence: true
+
   belongs_to :cellar
   belongs_to :wine
 
