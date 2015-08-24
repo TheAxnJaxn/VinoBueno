@@ -11,7 +11,8 @@ class Api::CellarsController < ApplicationController
   def show
     @cellar = Cellar.where(id: params[:id])
                     .includes(:wines)
-                    .includes(:images)[0]
+                    .includes(:images)
+                    .includes(:cellarings)[0]
     render :show
   end
 

@@ -5,20 +5,3 @@ json.img_url_thumb wine.image.url_thumb
 json.img_id wine.image.id
 
 json.avg_rev (wine.avg_rating*100).round / 100.0
-
-
-
-
-# Future phase - Cellars
-# if current_user.wines.include?(wine)
-#   current_user.cellars.each do |cellar|
-#     if cellar.wines.include?(wine)
-#       json.in_cellar cellar, :id, :name, :user_id
-#     end
-#   end
-# end
-# json.current_user current_user, :id, :email
-#
-# json.cellars current_user.cellars do |cellar|
-#   json.extract! cellar, :id, :name, :user_id
-# end

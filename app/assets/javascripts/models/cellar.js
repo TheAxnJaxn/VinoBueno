@@ -28,6 +28,8 @@ VinoBueno.Models.Cellar = Backbone.Model.extend({
     if (!this._cellarings) {
       this._cellarings = new VinoBueno.Collections.Cellarings();
     }
+
+    return this._cellarings;
   }
 
 });

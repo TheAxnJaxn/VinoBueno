@@ -3,12 +3,16 @@ class Api::WinesController < ApplicationController
   before_action :require_logged_in!
 
   def index
-    @wines = Wine.all.includes(:image).sample(5)
+    @wines = Wine.all
+                .includes(:image)
+                .includes(:cellarings)
+                .sample(5)
     render :index
   end
 
   def show
     @wine = Wine.where(id: params[:id])
+                .includes(:cellarings)
                 .includes(:reviews)
                 .includes(:users)[0]
     render :show

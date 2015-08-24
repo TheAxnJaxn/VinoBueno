@@ -8,8 +8,9 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
 
   initialize: function (options) {
     this.wine = options.wine;
-    this.collection = VinoBueno.Collections.cellars;
-    // this.listenTo(this.collection, 'sync', this.render);
+    // this.collection = VinoBueno.Collections.cellars;
+    this.collection = this.wine.cellarings();
+    this.listenTo(this.collection, 'sync', this.render);
     // this.collection.on('change:[wine_ids]', this.render);
   },
 
@@ -21,7 +22,7 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
   },
 
   addCellarOptions: function () {
-    this.collection.each(this.addCellarToButton.bind(this));
+    VinoBueno.Collections.cellars.each(this.addCellarToButton.bind(this));
     this.addRemovalOption();
   },
 
