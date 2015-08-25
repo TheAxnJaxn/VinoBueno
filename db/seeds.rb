@@ -4,6 +4,7 @@
 user1 = User.create(email: 'guest@example.com', password: 'password')
 user2 = User.create(email: 'tyrion@lannister.rock', password: 'paysdebts')
 user3 = User.create(email: 'cersei@lannister.rock', password: 'winelover')
+user4 = User.create(email: 'WilliamShakespear@yeoldentimes.com', password: 'something')
 
 ##### Wines #####
 wine1 = Wine.create(name: "Cupcake Vineyards Merlot",
@@ -37,6 +38,18 @@ wine5 = Wine.create(name: "Enchanted Woods Bubbly",
             varietal: "Blend",
             description: "Enchanting evenings start with enchanting wines. Our Enchanted Woods Bubbly is a delightfully effervescent white wine that makes a perfect accompaniment to any celebration, large or small. This light and fruity wine has flavors of juicy red apples, ripe pear, and lush pineapple, finished with a long creamy texture. This special limited release wine is produced only once a year.",
             grown: "California")
+wine6 = Wine.create(name: "Sweet Bliss Pink",
+            maker: "Sweet Bliss Winery",
+            wine_type: "Rose",
+            varietal: "Blend",
+            description: "Flash a little attitude... You've never had a wine like Sweet Bliss Pink before. White Zins are sooo 2005. We know you're craving a wine with more zip and character. The complexity of Sweet Bliss Pink will exquisitely reveal itself to you with every bright and beautiful sip. The label artwork of Sweet Bliss Pink depicts the essence and flavors of the wine impeccably. A fresh strawberry dipped in rich, white chocolate begs you to savor the delights of this sweet and clean, yet lush pink wine. The aromas of fresh strawberries jump out of the glass, while flavors of fresh melon and honey are artfully balanced by bright acidity. Sweet Bliss Pink is beautifully versatile. It's superb when paired with barbecued chicken or pork loin in a citrus glaze. For the ultimate indulgence, pair Sweet Bliss with berry pie or strawberry shortcake. And of course, pour Sweet Bliss on its own as a glorious aperitif.",
+            grown: "Washington")
+wine7 = Wine.create(name: "Sweet Bliss Red",
+            maker: "Sweet Bliss Winery",
+            wine_type: "Red",
+            varietal: "Blend",
+            description: "Slip into something lush... Sweet Bliss Red is a perfect wine for people who appreciate the complexity and rich texture of a superb red wine, but prefer an approachable, fruit-forward, off-dry flavor profile. The label artwork of Sweet Bliss Red depicts the essence and flavors of the wine flawlessly. A ripe red cherry dipped in sumptuous, melted chocolate irresistibly inspires you to delight in this sweet, luscious red wine. The aromas are a divine harmony of ripe red fruit and subtle toasted oak with deep cherry flavors and a velvety chocolate mouth feel. Sweet Bliss Red is strikingly versatile - so no need to be too precious with food pairings. Have a ball and experiment pairing this lush wine with your tastiest favorites. Serve it up with barbecued chicken, grilled burgers or pizza... For the ultimate indulgence, pair Sweet Bliss Red with chocolate cake, cheesecake and cobblers. Of course, we tempt you to pour Sweet Bliss all on its own as a divine aperitif.",
+            grown: "Washington")
 
 ##### Images #####
 Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439422377/cupcake-merlot_qxyfui.jpg",
@@ -59,6 +72,15 @@ Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439490479/
             url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/onceuponavine-enchanted-woods-bubbly_jmjiz7.jpg",
             imageable_id: wine5.id,
             imageable_type: "Wine")
+Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1439830669/fmomw6zkp9zruoyr66e6.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/fmomw6zkp9zruoyr66e6.jpg",
+            imageable_id: wine6.id,
+            imageable_type: "Wine")
+Image.create(url: "http://res.cloudinary.com/dpvk3lafz/image/upload/v1440515597/sweet-bliss-red_sbleoc.jpg",
+            url_thumb: "http://res.cloudinary.com/dpvk3lafz/image/upload/w_150,h_150/sweet-bliss-red_sbleoc.jpg",
+            imageable_id: wine7.id,
+            imageable_type: "Wine")
+
 
 ##### Reviews #####
 Review.create(user_id: user1.id,
@@ -86,7 +108,7 @@ Review.create(user_id: user3.id,
               rating: 5,
               review: "As good as any wine from The Reach.")
 Review.create(user_id: user3.id,
-              wine_id: wine4.id,
+              wine_id: wine6.id,
               rating: 5,
               review: "Age is just a number. It’s totally irrelevant unless, of course, you happen to be a bottle of wine.")
 Review.create(user_id: user1.id,
@@ -97,9 +119,33 @@ Review.create(user_id: user3.id,
               wine_id: wine5.id,
               rating: 5,
               review: "More wine!")
+Review.create(user_id: user4.id,
+              wine_id: wine1.id,
+              rating: 4,
+              review: "Give me a bowl of wine. I have not that alacrity of spirit Nor cheer of mind that I was wont to have.")
+Review.create(user_id: user4.id,
+              wine_id: wine3.id,
+              rating: 4,
+              review: "Good wine is a good familiar creature, if it be well used.")
+Review.create(user_id: user4.id,
+              wine_id: wine5.id,
+              rating: 3,
+              review: "A man cannot make him laugh – but that’s no marvel; he drinks no wine.")
+Review.create(user_id: user4.id,
+              wine_id: wine7.id,
+              rating: 2,
+              review: "I pray you, do not fall in love with me, For I am falser than vows made in wine.")
+Review.create(user_id: user4.id,
+              wine_id: wine2.id,
+              rating: 1,
+              review: "O thou invisible spirit of wine! If thou hast no name to be known by, let us call thee devil!")
+
 
 ##### Cellarings ##### (All users will have 2 cellars by default)
 Cellaring.create(cellar_id: 1, wine_id: wine1.id)
 Cellaring.create(cellar_id: 1, wine_id: wine2.id)
+Cellaring.create(cellar_id: 1, wine_id: wine5.id)
+Cellaring.create(cellar_id: 1, wine_id: wine6.id)
+Cellaring.create(cellar_id: 1, wine_id: wine7.id)
 Cellaring.create(cellar_id: 2, wine_id: wine3.id)
 Cellaring.create(cellar_id: 2, wine_id: wine4.id)
