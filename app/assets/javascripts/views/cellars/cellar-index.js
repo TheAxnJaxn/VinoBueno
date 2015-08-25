@@ -1,6 +1,7 @@
 VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
 
   // this.collection -> cellars
+  // may or may not have this.model -> 1 selected cellar
 
   template: JST['cellars/cellar-index'],
 
@@ -11,8 +12,11 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
     'click a.show-cellar': 'showCellar'
   },
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.collection, 'sync', this.render);
+    if (options.model) {
+      this.startingCellar(options.model);
+    }
   },
 
   render: function () {
@@ -31,7 +35,15 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
     var cellar = this.collection.getOrFetch(cellarID);
     this.removeCellarView();
     this._cellarView = new VinoBueno.Views.CellarShow({
-     model: cellar
+      model: cellar
+    });
+    this.addSubview('.wines-in-cellar', this._cellarView.bind(this));
+  },
+
+  startingCellar: function (cellar) {
+    this.removeCellarView();
+    this._cellarView = new VinoBueno.Views.CellarShow({
+      model: cellar
     });
     this.addSubview('.wines-in-cellar', this._cellarView.bind(this));
   },

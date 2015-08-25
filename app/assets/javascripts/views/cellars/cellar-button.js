@@ -3,7 +3,8 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
   template: JST['cellars/cellar-button'],
 
   events: {
-    'click a.cellar-choice': 'cellaringAction'
+    'click a.cellar-choice': 'cellaringAction',
+    'click .nav-to-cellar': 'showCellar'
   },
 
   initialize: function (options) {
@@ -32,6 +33,8 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
               .addClass('glyphicon glyphicon-ok')
               .attr('aria-hidden','true')
       this.$('.current-cellar')
+              .addClass('nav-to-cellar')
+              .data('cellar-id', cellar.id)
               .text(' ' + cellar.escape('name'))
               .prepend($glyph);
       this._currentCellar = cellar;
@@ -125,6 +128,11 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
     // update this cellaring model - since wine_ids have been updated already,
     // the button will re-render with correct info
     cellaring.save({ cellar_id: newCellarID });
+  },
+
+  showCellar: function (event) {
+    var cellarID = $(event.currentTarget).data('cellar-id');
+    Backbone.history.navigate('cellars/' + cellarID, { trigger: true })
   }
 
 });

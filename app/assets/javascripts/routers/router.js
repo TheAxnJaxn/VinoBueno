@@ -9,14 +9,22 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
     '': 'index',
     'wines/:id': 'wineShow',
     'wines/search/(?:queryString)': 'searchWineIndex',
-    'cellars/': 'cellarIndex'
+    'cellars/': 'cellarIndex',
+    'cellars/:id': 'cellarShow'
   },
 
   cellarIndex: function () {
-    // var cellars = VinoBueno.Collections.cellars;
-    // cellars.fetch();
     var view = new VinoBueno.Views.CellarIndex({
       collection: VinoBueno.Collections.cellars
+    });
+    this._swapView(view);
+  },
+
+  cellarShow: function (id) {
+    var cellar = VinoBueno.Collections.cellars.getOrFetch(id);
+    var view = new VinoBueno.Views.CellarIndex({
+      collection: VinoBueno.Collections.cellars,
+      model: cellar
     });
     this._swapView(view);
   },
