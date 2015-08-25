@@ -89,7 +89,7 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
     var cellaring = this.collection.findWhere({
           wine_id: this.wine.id,
           cellar_id: this._currentCellar.id
-          })
+        });
 
     this._currentCellar
         .get('wine_ids')
@@ -108,12 +108,23 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
   },
 
   updateCellaring: function (event) {
+    var newCellarID = $(event.currentTarget).data('cellar-id');
     var cellaring = this.collection.findWhere({
           wine_id: this.wine.id,
           cellar_id: this._currentCellar.id
-          })
-    // update this cellaring
+        });
+
     // update both old cellar's and new cellar's wine_ids
+    this._currentCellar
+        .get('wine_ids')
+        .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1);
+    VinoBueno.Collections.cellars.get(newCellarID)
+        .get('wine_ids')
+        .push(this.wine.id);
+
+    // update this cellaring model - since wine_ids have been updated already,
+    // the button will re-render with correct info
+    cellaring.save({ cellar_id: newCellarID });
   }
 
 });

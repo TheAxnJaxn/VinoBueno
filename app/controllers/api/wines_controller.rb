@@ -55,7 +55,7 @@ class Api::WinesController < ApplicationController
 
 end
 
-# make this a module?
+# refactor later
 # module Api
 #   class WineController < ApiController
 #   end
