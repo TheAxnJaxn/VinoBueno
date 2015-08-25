@@ -32,6 +32,7 @@ VinoBueno.Views.CellarForm = Backbone.View.extend({
       success: function (cellar) {
         this.collection.add(cellar);
         this.remove();
+        Backbone.history.navigate('cellars/' + cellar.id, { trigger: true });
       }.bind(this)
     });
   }

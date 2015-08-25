@@ -38,6 +38,7 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
       model: cellar
     });
     this.addSubview('.wines-in-cellar', this._cellarView.bind(this));
+    Backbone.history.navigate('cellars/' + cellarID);
   },
 
   startingCellar: function (cellar) {
