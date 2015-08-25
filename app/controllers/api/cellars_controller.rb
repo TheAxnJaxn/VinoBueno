@@ -27,6 +27,12 @@ class Api::CellarsController < ApplicationController
     end
   end
 
+  def destroy
+    @cellar = Cellar.find(params[:id])
+    @cellar.try(:destroy)
+    render json: {}
+  end
+
   private
 
   def cellar_params

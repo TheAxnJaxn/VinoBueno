@@ -1,7 +1,7 @@
 VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
 
-  // this.collection -> cellars
-  // may or may not have this.model -> 1 selected cellar
+  // this.collection -> VinoBueno.Collections.cellars
+  // may be passed this.model -> 1 selected cellar
 
   template: JST['cellars/cellar-index'],
 
@@ -13,13 +13,14 @@ VinoBueno.Views.CellarIndex = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync remove', this.render);
     if (options.model) {
       this.startingCellar(options.model);
     }
   },
 
   render: function () {
+    debugger
     var content = this.template({
       cellars: this.collection
     });

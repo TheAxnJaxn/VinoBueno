@@ -39,11 +39,12 @@ class Api::WinesController < ApplicationController
   def search
     term = "%" + params[:search] + "%"
     @wines = Wine.where(
-      "LOWER(name) LIKE ? OR LOWER(maker) LIKE ? OR LOWER(varietal) LIKE ?",
-      term.downcase,
-      term.downcase,
-      term.downcase
-    )
+          "LOWER(name) LIKE ? OR LOWER(maker) LIKE ? OR LOWER(varietal) LIKE ?",
+          term.downcase,
+          term.downcase,
+          term.downcase)
+          .includes(:image)
+          .includes(:cellarings)
     render :index
   end
 

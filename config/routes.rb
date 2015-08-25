@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     resources :wines do
       get 'search', on: :collection
     end
-    
+
     resources :images, only: [:create]
     resources :reviews, only: [:create, :update, :destroy, :index, :show]
-    resources :cellars, only: [:index, :create, :show]
+    resources :cellars, only: [:index, :create, :show, :destroy]
     resources :cellarings, only: [:create, :destroy, :update]
   end
 
