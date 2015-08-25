@@ -7,8 +7,9 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'index',
-    'wines/:id': 'wineShow',
+    'wines/random': 'wineRandom',
     'wines/search/(?:queryString)': 'searchWineIndex',
+    'wines/:id': 'wineShow',
     'cellars/': 'cellarIndex',
     'cellars/:id': 'cellarShow'
   },
@@ -32,6 +33,17 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   index: function () {
     var wines = VinoBueno.Collections.wines;
     wines.fetch();
+    var view = new VinoBueno.Views.WinesIndex({
+      collection: wines
+    });
+    this._swapView(view);
+  },
+
+  wineRandom: function () {
+    var wines = VinoBueno.Collections.wines;
+    wines.fetch({
+      data: { fetch: 'random' }
+    });
     var view = new VinoBueno.Views.WinesIndex({
       collection: wines
     });

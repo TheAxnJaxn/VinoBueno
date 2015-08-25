@@ -3,10 +3,18 @@ class Api::WinesController < ApplicationController
   before_action :require_logged_in!
 
   def index
-    @wines = Wine.all
-                .includes(:image)
-                .includes(:cellarings)
-                .sample(5)
+    if params[:fetch] == 'random'
+      @wines = Wine.all
+                  .includes(:image)
+                  .includes(:cellarings)
+                  .sample(5)
+    else
+      @wines = Wine.all
+                  .includes(:image)
+                  .includes(:cellarings)
+                  .order(:created_at)
+                  .limit(5)
+    end
     render :index
   end
     # .where(cellarings: { cellar_id: current_user.cellars })
