@@ -170,6 +170,10 @@ td, th {
 
  // modals styling
 
+.m-content form p label + * {
+  margin-top: 3px;
+}
+
 .m-background {
   background: rgba(92, 88, 88, 0.6);
   position: fixed;
@@ -275,6 +279,11 @@ li.small-grey {
   color: #555;
 }
 
+.wine-mini-img img {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 // star styling
 .star-off {
   color: #555;
@@ -310,4 +319,26 @@ li.small-grey {
 
 li.smaller-rating {
   font-size: 18px;
+}
+
+.wine-img img {
+  margin: 5px;
+}
+
+.btn-group {
+  width: 175px;
+  margin: 5px;
+}
+
+button.btn-new-review {
+  margin-top: 5px;
+}
+.my-review.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.my-review.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

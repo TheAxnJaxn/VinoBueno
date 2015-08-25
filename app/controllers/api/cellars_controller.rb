@@ -23,7 +23,8 @@ class Api::CellarsController < ApplicationController
     if @cellar.save
       render json: @cellar
     else
-      render json: @cellar.errors.full_messages, status: :unprocessable_entity
+      render json: @cellar.errors.full_messages,
+       status: :unprocessable_entity
     end
   end
 
@@ -31,6 +32,16 @@ class Api::CellarsController < ApplicationController
     @cellar = Cellar.find(params[:id])
     @cellar.try(:destroy)
     render json: {}
+  end
+
+  def update
+    @cellar = Cellar.find(params[:id])
+    if @cellar.update(cellar_params)
+      render json: @cellar
+    else
+      render json: @cellar.errors.full_messages,
+       status: :unprocessable_entity
+    end
   end
 
   private

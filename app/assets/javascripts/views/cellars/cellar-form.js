@@ -30,6 +30,7 @@ VinoBueno.Views.CellarForm = Backbone.View.extend({
     var formData = $(event.currentTarget).serializeJSON();
     this.model.save(formData, {
       success: function (cellar) {
+        cellar.fetch();
         this.collection.add(cellar);
         this.remove();
         Backbone.history.navigate('cellars/' + cellar.id, { trigger: true });

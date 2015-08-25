@@ -1,15 +1,15 @@
 VinoBueno.Views.CellarShow = Backbone.CompositeView.extend({
 
-  // this.model -> 1 cellar w/wines
 
   template: JST['cellars/cellar-show'],
 
   className: 'cellar-show-subview',
 
+  // this.model -> 1 cellar w/wines
   initialize: function () {
     this.wines = this.model.wines();
     this.listenTo(this.model, 'sync remove', this.render);
-    this.listenTo(this.model.wines(), 'add', this.addWine);
+    this.listenTo(this.wines, 'add', this.addWine);
     this.renderWines();
   },
 
@@ -19,12 +19,18 @@ VinoBueno.Views.CellarShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
     var content = this.template({
       cellar: this.model
     })
     this.$el.html(content);
+    this.checkIfEmpty();
     return this;
+  },
+
+  checkIfEmpty: function () {
+    if (this.$('.cellar-wine-index').text() === "") {
+      this.$('.cellar-wine-index').text("This cellar is empty. Oh look - it's winethirty!");
+    }
   },
 
   renderWines: function () {
@@ -39,7 +45,12 @@ VinoBueno.Views.CellarShow = Backbone.CompositeView.extend({
   },
 
   editCellar: function (event) {
-    alert('works!');
+    var modal = new VinoBueno.Views.CellarEdit({
+      model: this.model
+      //, collection?
+    });
+    $('body').append(modal.$el);
+    modal.render();
   },
 
   deleteCellar: function (event) {

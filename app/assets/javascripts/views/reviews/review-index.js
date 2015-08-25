@@ -32,6 +32,10 @@ VinoBueno.Views.ReviewsIndex = Backbone.CompositeView.extend({
         $('.btn-new-review').replaceWith($button);
       }
     }.bind(this))
+
+    if (this.$('.my-review').text() === "") {
+      this.$('.my-review').text("You have not yet reviewed this wine. Save the day by helping some wine out of its bottle and in to your glass, then tell us what you thought of it!");
+    }
   },
 
   renderCommunityReviews: function () {

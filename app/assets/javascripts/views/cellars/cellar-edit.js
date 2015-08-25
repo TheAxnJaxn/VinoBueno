@@ -1,10 +1,11 @@
-VinoBueno.Views.CellarDelete = Backbone.View.extend ({
+VinoBueno.Views.CellarEdit = Backbone.View.extend ({
 
   // this.model -> 1 cellar
+  // this.collection needed?
 
-  template: JST['cellars/cellar-delete'],
+  template: JST['cellars/cellar-edit'],
 
-  className: 'delete-confirmation',
+  className: 'cellar-edit',
 
   render: function () {
     var content = this.template({
@@ -17,23 +18,24 @@ VinoBueno.Views.CellarDelete = Backbone.View.extend ({
   events: {
     'click .close': 'remove',
     'click .m-background': 'remove',
-    'click .cancel': 'remove',
     'click .m-content': 'stopProp',
-    'click .confirm': 'destroyCellar'
+    'submit form': 'editCellar'
   },
 
   stopProp: function (event) {
     event.stopPropagation();
   },
 
-  destroyCellar: function (event) {
-    this.model.destroy({
+  editCellar: function (event) {
+    event.preventDefault();
+    var formData = $(event.currentTarget).serializeJSON().cellar;
+
+    this.model.save(formData, {
       success: function (cellar) {
-        VinoBueno.Collections.cellars.remove(cellar);
+        VinoBueno.Collections.cellars.add(cellar);
         this.remove();
-        Backbone.history.navigate('cellars/', {trigger: true});
       }.bind(this)
-    });
+    })
   }
 
 });

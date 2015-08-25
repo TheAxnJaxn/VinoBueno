@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
     resources :images, only: [:create]
     resources :reviews, only: [:create, :update, :destroy, :index, :show]
-    resources :cellars, only: [:index, :create, :show, :destroy]
+    resources :cellars, only: [:index, :create, :show, :destroy, :update]
     resources :cellarings, only: [:create, :destroy, :update]
   end
 
