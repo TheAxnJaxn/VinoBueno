@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :cellars
 
+  has_many :cellarings, through: :cellars
+
   after_create :create_default_cellars
 
   def password=(password)

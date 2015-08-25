@@ -9,9 +9,8 @@ class Api::WinesController < ApplicationController
                 .sample(5)
     render :index
   end
-                # .includes(:cellars).where(cellars: {user_id: current_user.id})
+    # .where(cellarings: { cellar_id: current_user.cellars })
 
-  #.where(cellarings: {cellar_id IN current_user.cellars.id})
   def show
     @wine = Wine.where(id: params[:id])
                 .includes(:cellarings)
@@ -19,7 +18,7 @@ class Api::WinesController < ApplicationController
                 .includes(:users)[0]
     render :show
   end
-                # .includes(:cellars).where(cellars: {user_id: current_user.id})
+    # .where(cellarings: { cellar_id: current_user.cellars })
 
   def create
     @wine = Wine.new(wine_params)

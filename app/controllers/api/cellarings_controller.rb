@@ -14,11 +14,9 @@ class Api::CellaringsController < ApplicationController
   end
 
   def destroy
-    @cellaring = Cellaring.find_by(
-                  cellar_id: params[:cellar_id],
-                  wine_id: params[:wine_id]
-                  )
+    @cellaring = Cellaring.find(params[:id])
     @cellaring.try(:destroy)
+    render json: {}
   end
 
   def update

@@ -8,10 +8,9 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
 
   initialize: function (options) {
     this.wine = options.wine;
-    // this.collection = VinoBueno.Collections.cellars;
     this.collection = this.wine.cellarings();
-    this.listenTo(this.collection, 'sync', this.render);
-    // this.collection.on('change:[wine_ids]', this.render);
+    this.listenTo(this.collection, 'sync add remove', this.render);
+    this.listenTo(VinoBueno.Collections.cellars, 'sync', this.render)
   },
 
   render: function () {
@@ -32,7 +31,8 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
       var $glyph = $('<span></span>')
               .addClass('glyphicon glyphicon-ok')
               .attr('aria-hidden','true')
-      this.$('.current-cellar').text(' ' + cellar.escape('name'))
+      this.$('.current-cellar')
+              .text(' ' + cellar.escape('name'))
               .prepend($glyph);
       this._currentCellar = cellar;
     } else {
@@ -69,45 +69,51 @@ VinoBueno.Views.CellarButton = Backbone.View.extend ({
 
   createCellaring: function (event) {
     var cellar_id = $(event.currentTarget).data('cellar-id');
-    var cellar = this.collection.get(cellar_id);
+    var cellar = VinoBueno.Collections.cellars.get(cellar_id);
 
     var cellaring = new VinoBueno.Models.Cellaring();
     cellaring.save({
       cellar_id: cellar_id,
       wine_id: this.wine.id
     }, {
-      success: function () {
-        cellar.get('wine_ids').push(this.wine.id);
-        this.render();
+      success: function (model) {
+        cellar.get('wine_ids').push(this.wine.id)
+        this.collection.add(model)
       }.bind(this)
     });
   },
 
   destroyCellaring: function (event) {
-    var cellaring = new VinoBueno.Models.Cellaring({
-      wine_id: this.wine.id,
-      cellar_id: this._currentCellar.id
-    });
+    // remove this.wine.id from wine_ids of old cellar
+    // find & destroy correct cellaring
+    var cellaring = this.collection.findWhere({
+          wine_id: this.wine.id,
+          cellar_id: this._currentCellar.id
+          })
 
-    Backbone.sync("delete", cellaring, {
+    this._currentCellar
+        .get('wine_ids')
+        .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1);
+
+    cellaring.destroy({
       success: function () {
-        this._currentCellar
-            .get('wine_ids')
-            .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1);
-        this.render();
+        this.collection.remove(cellaring);
+      }.bind(this),
+
+      error: function () {
+        this._currentCellar.get('wine_ids').push(this.wine.id)
       }.bind(this)
+
     })
-    // cellaring.destroy({
-    //   success: function () {
-    //     this._currentCellar
-    //         .get('wine_ids')
-    //         .splice(this._currentCellar.get('wine_ids').indexOf(this.wine.id),1);
-    //     this.render();
-    //   }.bind(this)
-    // });
   },
 
   updateCellaring: function (event) {
+    var cellaring = this.collection.findWhere({
+          wine_id: this.wine.id,
+          cellar_id: this._currentCellar.id
+          })
+    // update this cellaring
+    // update both old cellar's and new cellar's wine_ids
   }
 
 });
