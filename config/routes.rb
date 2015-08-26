@@ -7,10 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
 
-    resources :wines do
-      get 'search', on: :collection
-    end
-
+    resources :wines
     resources :images, only: [:create]
     resources :reviews, only: [:create, :update, :destroy, :index, :show]
     resources :cellars, only: [:index, :create, :show, :destroy, :update]

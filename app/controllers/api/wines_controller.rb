@@ -8,12 +8,21 @@ class Api::WinesController < ApplicationController
                   .includes(:image)
                   .includes(:cellarings)
                   .sample(5)
-    else
+    elsif params[:fetch] == 'recent'
       @wines = Wine.all
                   .includes(:image)
                   .includes(:cellarings)
                   .order(:created_at)
                   .limit(5)
+    elsif params[:fetch] == 'search'
+      term = "%" + params[:search] + "%"
+      @wines = Wine.where(
+            "LOWER(name) LIKE ? OR LOWER(maker) LIKE ? OR LOWER(varietal) LIKE ?",
+            term.downcase,
+            term.downcase,
+            term.downcase)
+            .includes(:image)
+            .includes(:cellarings)
     end
     render :index
   end
@@ -42,18 +51,6 @@ class Api::WinesController < ApplicationController
     @wine = Wine.find(params[:id])
     @wine.try(:destroy)
     render json: @wine
-  end
-
-  def search
-    term = "%" + params[:search] + "%"
-    @wines = Wine.where(
-          "LOWER(name) LIKE ? OR LOWER(maker) LIKE ? OR LOWER(varietal) LIKE ?",
-          term.downcase,
-          term.downcase,
-          term.downcase)
-          .includes(:image)
-          .includes(:cellarings)
-    render :index
   end
 
   private

@@ -31,21 +31,21 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
-    var wines = VinoBueno.Collections.wines;
-    wines.fetch();
+    VinoBueno.Collections.wines.fetch({
+      data: { fetch: 'recent' }
+    });
     var view = new VinoBueno.Views.WinesIndex({
-      collection: wines
+      collection: VinoBueno.Collections.wines
     });
     this._swapView(view);
   },
 
   wineRandom: function () {
-    var wines = VinoBueno.Collections.wines;
-    wines.fetch({
+    VinoBueno.Collections.wines.fetch({
       data: { fetch: 'random' }
     });
     var view = new VinoBueno.Views.WinesIndex({
-      collection: wines
+      collection: VinoBueno.Collections.wines
     });
     this._swapView(view);
   },
@@ -60,13 +60,16 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
   },
 
   searchWineIndex: function (queryString) {
-    var searchedCollection = VinoBueno.Collections.wines;
-    searchedCollection.url = 'api/wines/search?' + queryString;
-    searchedCollection.fetch({
-      // data: {search: queryString }
-    });
+    // var searchedCollection = VinoBueno.Collections.wines;
+    // searchedCollection.url = 'api/wines/search?' + queryString;
+    // searchedCollection.fetch({
+    // //  data: { search: queryString }
+    // });
+    VinoBueno.Collections.wines.fetch({
+      data: { fetch: 'search', search: queryString }
+    })
     var view = new VinoBueno.Views.WinesIndex({
-      collection: searchedCollection
+      collection: VinoBueno.Collections.wines
     });
     this._swapView(view);
   },
