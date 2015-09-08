@@ -26,7 +26,8 @@ class Api::WinesController < ApplicationController
     end
     render :index
   end
-    # .where(cellarings: { cellar_id: current_user.cellars })
+  # eventually: .order(created_at: :desc) for most recent
+  # .where(cellarings: { cellar_id: current_user.cellars })
 
   def show
     @wine = Wine.where(id: params[:id])
