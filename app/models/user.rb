@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   has_many :cellarings, through: :cellars
 
   has_many :friendships
-  has_many :friends, through: :friendships
+  has_many :friends, through: :friendships, source: :user
 
   after_create :create_default_cellars
 

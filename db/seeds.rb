@@ -151,6 +151,7 @@ Cellaring.create(cellar_id: 1, wine_id: wine7.id)
 Cellaring.create(cellar_id: 2, wine_id: wine3.id)
 Cellaring.create(cellar_id: 2, wine_id: wine4.id)
 
+
 ##### Friendships #####
 Friendship.create(user_id: user1.id, friend_id: user2.id)
 Friendship.create(user_id: user1.id, friend_id: user3.id)

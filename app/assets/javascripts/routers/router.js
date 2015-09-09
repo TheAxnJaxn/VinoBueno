@@ -7,12 +7,21 @@ VinoBueno.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'index',
+    // 'feed': 'feedIndex',
     'wines/random': 'wineRandom',
     'wines/search/(?:queryString)': 'searchWineIndex',
     'wines/:id': 'wineShow',
     'cellars/': 'cellarIndex',
     'cellars/:id': 'cellarShow'
   },
+
+  // feedIndex: function () {
+  //   var collection
+  //   var view = new VinoBueno.Views.FeedIndex({
+  //    collection
+  //   });
+  //   this._swapView(view);
+  // },
 
   cellarIndex: function () {
     var view = new VinoBueno.Views.CellarIndex({
