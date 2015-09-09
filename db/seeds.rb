@@ -4,7 +4,8 @@
 user1 = User.create(email: 'guest@example.com', password: 'password')
 user2 = User.create(email: 'tyrion@lannister.rock', password: 'paysdebts')
 user3 = User.create(email: 'cersei@lannister.rock', password: 'winelover')
-user4 = User.create(email: 'WilliamShakespear@yeoldentimes.com', password: 'something')
+user4 = User.create(email: 'williamshakespeare@yeoldentimes.com', password: 'something')
+user5 = User.create(email: 'bettywhite@gmail.com', password: 'bigglassplease')
 
 ##### Wines #####
 wine1 = Wine.create(name: "Cupcake Vineyards Merlot",
@@ -149,3 +150,8 @@ Cellaring.create(cellar_id: 1, wine_id: wine6.id)
 Cellaring.create(cellar_id: 1, wine_id: wine7.id)
 Cellaring.create(cellar_id: 2, wine_id: wine3.id)
 Cellaring.create(cellar_id: 2, wine_id: wine4.id)
+
+##### Friendships #####
+Friendship.create(user_id: user1.id, friend_id: user2.id)
+Friendship.create(user_id: user1.id, friend_id: user3.id)
+Friendship.create(user_id: user1.id, friend_id: user4.id)

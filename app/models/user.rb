@@ -22,8 +22,10 @@ class User < ActiveRecord::Base
   has_many :images, as: :imageable
   has_many :reviews
   has_many :cellars
-
   has_many :cellarings, through: :cellars
+
+  has_many :friendships
+  has_many :friends, through: :friendships
 
   after_create :create_default_cellars
 
