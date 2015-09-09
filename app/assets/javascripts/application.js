@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require typed
 //= require underscore
 //= require backbone
 //= require serialize_json

@@ -8,17 +8,40 @@
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
         <p>
-          <input type="text" name="user[email]" value="" placeholder="Email" class="form-control">
+          <input type="text" name="user[email]" placeholder="Email" class="form-control email-field">
         </p>
 
         <p>
-          <input type="password" name="user[password]" value="" placeholder="Password" class="form-control">
+          <input type="password" name="user[password]" placeholder="Password" class="form-control password-field">
         </p>
 
-        <button type="submit">Sign In</button><button type="submit" name="type" value="guest">Guest Sign In</button>
-
+        <button type="submit" class="submit">Sign In</button>
+        <button type="button" name="submit" class="guest-login">Guest Sign In</button>
       </form>
-
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function () {
+    $('.guest-login').on('click', function () {
+      $('.email-field').typed({
+        strings: ['guest@example.com'],
+        typeSpeed: 30,
+        startDelay: 5,
+
+        callback: function() {
+          $('.password-field').typed({
+            strings: ['password'],
+            typeSpeed: 15,
+            startDelay: 1,
+
+            callback: function() {
+              $('.submit').click();
+            }
+          })
+        }
+      });
+    })
+  });
+</script>
